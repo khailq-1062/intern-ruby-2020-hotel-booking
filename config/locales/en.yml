@@ -1,0 +1,28 @@
+en:
+  copyright: "Copy right"
+  home: "Home"
+  about: "About"
+  room: "Room"
+  contact: "Contact"
+  search: "Search"
+  menu_side: "Menu side"
+  booking: "Booking"
+  created: "created by"
+  lake_resort: "Lake resort"
+  location: "Location"
+  layouts:
+    sub_title: "Lake Resort || khu nghỉ dưỡng cao cấp"
+    stay: "Stay"
+    sale: "Get sale , event and more !"
+    subscribe: "Subcribe"
+    lorem: "lorem ipsum"
+    read_more: "Read more"
+    get_in_touch: "Get in touch"
+    quick_link: "Quick link"
+    author: "MR Khai & MR Duong"
+
+  rooms:
+    room:
+      details: "details"
+      per_night: "Per night"
+      lorem: "lorem"

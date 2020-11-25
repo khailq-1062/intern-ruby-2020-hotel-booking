@@ -1,0 +1,21 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: booking_hotel
+  pool: 5
+  username: root
+  password: Hoilamgi0410@
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: booking_hotel
+  pool: 5
+  username: root
+  password: Hoilamgi0410@
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: booking_hotel
+  pool: 5
+  username: root
+  password: Hoilamgi0410@

@@ -1,0 +1,17 @@
+<div class="col-sm-4 nroom-grid">
+  <%= link_to room_path(room.slug), class: "room-img" do %>
+   <%= image_tag room.image %>
+  <% end %>
+  <div class="row this-conts">
+    <div class="media">
+      <div class="media-body this-title"><%= room.name %></div>
+      <div class="media-right">$<%= room.price %>
+        <small><%= t "rooms.per_night" %></small>
+      </div>
+    </div>
+    <p>
+      <%= truncate room.description, length: Settings.rooms.length_des %>
+    </p>
+    <%= link_to t("rooms.view"), room_path(room.slug), class: "read-more" %>
+  </div>
+</div>
