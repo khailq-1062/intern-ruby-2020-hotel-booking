@@ -1,0 +1,9 @@
+<div class="col-md-3">
+  <b><p><%= t "name" %>: </p></b>
+  <b><p><%= t "email" %>: </p></b>
+</div>
+<div class="col-md-9">
+  <p><%= user.name %></p>
+  <p><%= user.email %></p>
+</div>
+<%= link_to t("edit_profile"), edit_user_path %>

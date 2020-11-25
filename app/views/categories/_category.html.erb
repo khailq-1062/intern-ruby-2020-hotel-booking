@@ -1,0 +1,12 @@
+<div class="div-per-category">
+  <%= link_to "#" do %>
+    <h4><%= category.name %></h4>
+  <% end %>
+  <div class="row">
+    <%= render partial: "rooms/room",
+      collection: category.rooms_each_category %>
+  </div>
+  <div class="div-btn-readmore">
+    <%= button_to t("read_more"), "#", class:"btn green-btn" %>
+  </div>
+</div>

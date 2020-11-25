@@ -1,0 +1,97 @@
+<% provide :title, @room.name %>
+<section class="row final-inner-header">
+  <div class="container">
+    <h2 class="this-title"><%= t "rooms.show.base_title" %></h2>
+  </div>
+</section>
+<section class="row final-breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to t("home"), "#" %>
+      </li>
+      <li class="active"><%= t "rooms.show.base_title" %></li>
+    </ol>
+  </div>
+</section>
+<section class="container clearfix common-pad-inner">
+<div class="row">
+  <div class="col-md-4 col-md-push-8">
+    <div class="single-sidebar-widget sroom-sidebar">
+      <!-- Booking Form style-->
+      <div class="book-r-form">
+        <div class="room-price">
+          <h6><%= t "rooms.start_from" %></h6>
+          <p>$<%= @room.price %><span>/ <%= t "rooms.per_night" %></span></p>
+        </div>
+        <div class="book-form">
+          <div class="col-md-12"><b><%= t "rooms.start" %></b>
+            <input type="date" class="form-control datepicker-example8">
+          </div>
+          <div class="col-md-12"><b><%= t "rooms.end" %></b>
+            <input type="date" class="form-control datepicker-example8">
+          </div>
+          <div class="col-md-12"><b><%= t "rooms.person" %></b>
+            <div class="select-box">
+              <select name="selectMenu" class="select-menu">
+                <option value="default"><%= t "rooms.person" %></option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="chk-button">
+              <button type="submit" class="res-btn"><%= t "rooms.check" %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="single-sidebar-widget-outer">
+        <div class="sec-title">
+          <h2><%= t "rooms.related" %></h2>
+        </div>
+        <div class="popular-post">
+          <ul>
+            <%= render partial: "relate_rooms/relate_room", collection: @relate_rooms %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 col-md-pull-4">
+    <div class="single-room-wrapper">
+      <!-- Rooms Slider style-->
+      <div class="room-slider-wrapper">
+        <div class="single-r-wrapper">
+          <div class="single-sl-room">
+            <div data-hash="zero" class="owl-itemm">
+              <%= image_tag "https://a0.muscache.com/im/pictures/ee8757b5-390a-4b69-b223-685e4d746f11.jpg?im_w=720" %>
+            </div>
+          </div>
+        </div>
+      <div class="room-dec-wrapper description">
+        <h2><%= t "rooms.description" %></h2>
+        <p>
+          <%= @room.description %>
+        </p>
+      </div>
+      <div class="room-fac-wrapper">
+        <% if @room.supplies.size > 0 %>
+          <h2><%= t "rooms.facilities" %></h2>
+          <div class="row">
+            <div class="ro-facilitie">
+              <ul class="clearfix">
+                <%= render @room.supplies %>
+              </ul>
+            </div>
+          </div>
+          <% end %>
+      </div>
+      <div class="room-overview">
+        <%= link_to "#", class: "res-btn" do %>
+          <%= t "rooms.book_now" %><i class="fa fa-arrow-right"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

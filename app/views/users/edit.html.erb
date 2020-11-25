@@ -1,0 +1,4 @@
+<% provide :title, @user.name + t("edit_profile") %>
+<div class="form-login">
+  <%= render "shared/user_form", user: @user %>
+</div>
