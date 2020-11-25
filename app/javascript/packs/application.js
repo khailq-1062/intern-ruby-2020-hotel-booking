@@ -5,11 +5,13 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
-//= require owl.carousel
-//= require rails-ujs
-//= require jquery
-//= require bootstrap-sprockets
+//= require foundation
+//= require turbolinks
+//= require_tree .
+//= require modernizr
+//= require froala_editor.min.js
+window.jQuery = $;
+window.$ = $;
 
 require("@rails/ujs").start()
 require("turbolinks").start()
