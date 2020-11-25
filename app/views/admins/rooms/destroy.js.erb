@@ -1,0 +1,6 @@
+if(<%= @result == true %>) {
+  document.getElementById("btn-del-<%= params[:id]%>").parentNode.parentNode.remove();
+  alert("<%= t "admins.delete_success" %>");
+} else {
+  alert("<%= t "admins.delete_false" %>");
+}

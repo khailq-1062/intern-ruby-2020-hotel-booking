@@ -1,0 +1,19 @@
+<% provide :title, @cate.name %>
+<section class="container clearfix common-pad-inner about-info-box nasir-room-grid-header">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+      <div class="sec-header3">
+        <h2><%= t "rooms.type_room" %><%= @cate.name %></h2>
+        <h3><%= t "rooms.index.total_record", num: @cate.rooms.size %></h3>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="row nasir-room-grid">
+  <div class="container">
+    <div class="row">
+      <%= render @rooms %>
+    </div>
+    <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+  </div>
+</section>

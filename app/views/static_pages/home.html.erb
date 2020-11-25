@@ -1,0 +1,239 @@
+<% provide :title, t("home") %>
+<div id="minimal-bootstrap-carousel" data-ride="carousel" class="carousel default-home-slider slide carousel-fade shop-slider">
+  <div role="listbox" class="carousel-inner">
+      <div style="background-image: url(slider/10.jpg);backgroudn-position: center right;" class="item active slide-1">
+          <div class="carousel-caption nhs-caption nhs-caption6">
+            <div class="thm-container">
+                <div class="box valign-middle">
+                    <div class="content text-center">
+                        <h2 data-animation="animated fadeInUp" class="this-title">Spend Your Dream Holidays</h2>
+                        <p data-animation="animated fadeInDown">Book a room at our resort now and get a discount of 30%. Fruit basket, soft drinks and a huge cozy bed are waiting for you. We will do everything to make you feel at home.</p><a data-animation="animated fadeInLeft" href="#"
+                          class="nhs-btn3"><%= t ".book_now" %></a><a data-animation="animated fadeInRight" href="#" class="nhs-btn"><%= t ".know_more" %></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div style="background-image: url(slider/11.jpg);backgroudn-position: center right;" class="item slide-2">
+        <div class="carousel-caption nhs-caption nhs-caption7">
+          <div class="thm-container">
+            <div class="box valign-middle">
+              <div class="content text-left pull-left">
+								<h2 data-animation="animated fadeInUp" class="this-title">
+									<%= t ".the_best_place_for_relax" %>
+								</h2>
+								<p data-animation="animated fadeInDown"><%= t ".lorems" %></p>
+								<%= link_to t(".book_now"), "#", class: "nhs-btn3" %>
+								<%= link_to t(".know_more"), "#", class: "nhs-btn3" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background-image: url(slider/12.jpg);backgroudn-position: center right;" class="item slide-2">
+          <div class="carousel-caption nhs-caption nhs-caption8">
+              <div class="thm-container">
+                  <div class="box valign-middle">
+                      <div class="content text-center">
+                          <h2 data-animation="animated fadeInUp"
+														class="this-title">
+														<%= t ".we_offer_you_the_best" %>
+													</h2>
+                          <h2 data-animation="animated fadeInUp" class="this-title">luxury hotel with an impressive history</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <a href="#minimal-bootstrap-carousel"
+		role="button"
+		data-slide="prev"
+		class="left carousel-control">
+    <i class="fa fa-angle-left"></i>
+		<span class="sr-only"><%= t ".previous" %></span>
+  </a>
+  <a href="#minimal-bootstrap-carousel"
+		role="button" data-slide="next"
+		class="right carousel-control">
+    <i class="fa fa-angle-right"></i>
+		<span class="sr-only"><%= t ".next" %></span>
+  </a>
+</div>
+<section class="container clearfix common-pad nasir-style">
+    <div class="sec-header sec-header-pad">
+        <h2><%= t ".rooms_and_suits" %></h2>
+        <h3><%= t ".pick_a_room_and_enjoy_best_budget" %></h3>
+    </div>
+    <div class="div-hired-room-homepage">
+      <%= render @rooms %>
+    </div>
+</section>
+<section class="resort-counert clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+          <div class="rest-fact-counter">
+            <div class="text-box">
+                <h4 data-from="0" data-to="121" class="timer">121</h4>
+            </div>
+            <div class="text-box2">
+                <p><%= t "new_friendships" %></p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="rest-fact-counter">
+            <div class="text-box">
+                <h4 data-from="0" data-to="254" class="timer">254</h4>
+            </div>
+            <div class="text-box2">
+                <p><%= t ".five_start_rating" %></p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="rest-fact-counter">
+            <div class="text-box">
+                <h4 data-from="0" data-to="430" class="timer">430</h4>
+            </div>
+            <div class="text-box2">
+                <p><%= t ".international_guests" %></p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="rest-fact-counter">
+            <div class="text-box">
+                <h4 data-from="0" data-to="782" class="timer">782</h4>
+            </div>
+            <div class="text-box2">
+                <p><%= t ".served_breakfast" %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="our-offer-htwo clearfix">
+  <div class="container clearfix common-pad">
+    <div class="row">
+      <div class="col-md-4 our-offer-left">
+        <div class="sec-header3">
+            <h2><%= t ".our_offers" %></h2>
+            <h3><%= t "pick_a_room_and_best_suits" %></h3>
+        </div>
+        <p><%= t ".lorems" %></p>
+        <p><%= t ".lorems" %></p>
+      </div>
+      <div class="col-md-8 offer-right">
+        <div class="offer-img-box1">
+            <div class="spa-offer">
+                <div class="img_holder"><%= image_tag  "our-resort/1.jpg", atl: "error_image",class: "img-responsive" %>
+                    <div class="overlay">
+                        <div class="room-ad-cont">
+                            <h2>25% <span><%= t ".sale_off" %></span></h2>
+                            <h3><%= t ".weekend_spa_offer" %></h3>
+                            <p><%= t ".enjoy_lux_and" %>.</p><a href="booking.html"><%= t "read_more" %></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offer-img-box2">
+            <div class="box1">
+                <div class="img_holder">
+                    <a href="booking.html"><%= image_tag  "our-resort/2.jpg", atl: "error_image",class: "img-responsive" %>
+                        <div class="overlay">
+                            <div class="text1">* <%= t ".condition" %></div>
+                            <div class="offertext1">
+                                <p>15%
+                                  <span class="off-txt">
+                                    <%= t ".sale_off" %>
+                                  </span>
+                                  <span class="winter-txt">
+                                    <%= t ".in_winter_season" %>
+                                  </span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="img_holder">
+                    <a href="booking.html">
+                      <%= image_tag  "our-resort/3.jpg",
+                        atl: "error_image",
+                        class: "img-responsive" %>
+                      <div class="overlay">
+                          <p><%= t ".honey_moon_offer" %></p>
+                          <h2>25% <span><%= t ".sale_off" %></span></h2>
+                          <h6>* <%= t ".condition" %></h6>
+                      </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="our-galler-htwo clearfix common-pad">
+  <div class="container clearfix">
+      <div class="sec-header sec-w-header">
+          <h2><%= t ".our_gallery" %>></h2>
+          <h3><%= t ".pick_a_room_and_enjoy_best_budget" %></h3>
+      </div>
+  </div>
+  <div class="div-hired-room-homepage">
+    <div class="item temple-class">
+      <%= image_tag  "gallery-two/1 (1).jpg",
+        atl: "error_image",
+        class: "img-responsive" %>
+      <div class="this-overlay">
+        <div class="this-texts">
+          <h4 class="this-title"><%= t ".our_staff" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="item temple-class">
+      <%= image_tag  "gallery-two/3.jpg",
+        atl: "error_image",
+        class: "img-responsive" %>
+      <div class="this-overlay">
+        <h4 class="this-title"><%= t ".exterior_view" %></h4>
+      </div>
+    </div>
+    <div class="item temple-class">
+      <%= image_tag  "gallery-two/3.jpg",
+        atl: "error_image",
+        class: "img-responsive" %>
+      <div class="this-overlay">
+        <div class="this-texts">
+          <h4 class="this-title"><%= t ".bedroom" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="item temple-class">
+      <%= image_tag  "gallery-two/4.jpg",
+        atl: "error_image",
+        class: "img-responsive" %>
+      <div class="this-overlay">
+        <div class="this-texts">
+          <h4 class="this-title"><%= t ".swimming_pool" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="item temple-class">
+      <%= image_tag  "gallery-two/5.jpg",
+        atl: "error_image",
+        class: "img-responsive" %>
+      <div class="this-overlay">
+        <div class="this-texts">
+          <h4 class="this-title"><%= t ".our_restaurant" %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
