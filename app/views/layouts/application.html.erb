@@ -1,15 +1,150 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InternRuby2020HotelBooking</title>
+    <title><%= t "layouts.sub_title" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
+    <nav id="main-navigation-wrapper" class="navbar navbar-default _fixed-header _light-header stricky">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "index.html", class: "navbar-brand" do %>
+            <%= image_tag("logo2.png", alt: "Logo") %>
+          <% end %>
+        </div>
+        <div id="main-navigation" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to "index.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+                <%= t "home" %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "aboutus.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+                <%= t "about" %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "aboutus.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+                <%= t "room" %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "aboutus.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+                <%= t "contact" %>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav right-side-nav">
+            <li class="dropdown">
+              <%= link_to "#" do %>
+                <span class="phone-only"><%= t "search" %></span>
+                <i class="icon icon-Search"></i>
+              <% end %>
+              <ul class="dropdown-submenu has-search-form align-right">
+                <li>
+                  <form action="#" class="navbar-form">
+                    <input type="text" placeholder="Enter Your Keyword">
+                    <button type="submit"><i class="icon icon-Search"></i></button>
+                  </form>
+                    <!-- /.navbar-form-->
+                </li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to "#sidebarCollapse", role: "button", data_toggle: "collapse", aria_expanded: "false", aria_controls: "sidebarCollapse" do %>
+                <span class="phone-only"><%= t "menu_side" %></span>
+                <i class="fa fa-bars"></i>
+              <% end %>
+            </li>
+          </ul>
+            <!-- /.nav navbar-right-->
+          <form action="#" class="nav-search-form row">
+            <div class="input-group">
+              <input type="search" placeholder="Type here for search" class="form-control"><span class="input-group-addon">
+              <button type="submit"><i class="icon icon-Search"></i></button></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
+    <div class="nasir-subscribe-form-row row">
+      <div class="container">
+        <div class="row this-dashed">
+          <div class="this-texts">
+            <h2><%= t "layouts.stay" %></h2>
+            <h3><%= t "layouts.sale" %></h3>
+          </div>
+          <form action="#" method="post" class="this-form input-group">
+            <input type="email" placeholder="Enter your email address" class="form-control"><span class="input-group-addon">
+            <button type="submit" class="res-btn"><%= t "layouts.subscribe" %><i class="fa fa-arrow-right"></i></button></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <section class="clearfix footer-wrapper">
+        <section class="container clearfix footer-pad">
+          <div class="widget about-us-widget col-md-4 col-sm-6">
+            <%= link_to "index.html" do %>
+              <%= image_tag("logo.png", class: "img-responsive") %>
+            <% end %>
+            <p><%= t "layouts.lorem" %></p>
+            <%= link_to "aboutus.html" do %>
+              <%= t "layouts.read_more" %>
+              <i class="fa fa-angle-double-right"></i>
+            <% end %>
+          </div>
+          <div class="widget widget-links col-md-2 col-sm-6">
+            <h4 class="widget_title"><%= t "layouts.quick_link" %></h4>
+            <div class="widget-contact-list">
+              <ul>
+                <li><%= link_to t("home"), "index.html" %></li>
+                <li><%= link_to t("about"), "aboutus.html" %></li>
+                <li><%= link_to t("room"), "suite-room.html" %></li>
+                <li><%= link_to t("contact"), "contact.html" %></li>
+                <li><%= link_to t("booking"), "booking.html" %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="widget get-in-touch col-md-4 col-sm-6">
+            <h4 class="widget_title"><%= t "layouts.get_in_touch" %></h4>
+            <div class="widget-contact-list">
+              <ul>
+                <li><i class="fa fa-map-marker"></i>
+                  <div class="fleft location_address"><b><%= t "lake_resort" %></b><br><%= t "location" %></div>
+                </li>
+                <li><i class="fa fa-phone"></i>
+                  <div class="fleft contact_no"> <%= link_to "0392831499", "tel:+018655248503" %></div>
+                </li>
+                <li><i class="fa fa-envelope-o"></i>
+                  <div class="fleft contact_mail"> <%= link_to "nhokonhebi99@gmail.com", "mailto:info@resorthotel.com" %></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="container clearfix footer-b-pad">
+        <div class="footer-copy">
+          <div class="pull-left fo-txt">
+            <p><%= t "copyright" %></p>
+          </div>
+          <div class="pull-right fo-txt">
+            <p><%= t "created" %> <%= link_to t("author"), "http://themeforest.net/user/designarc" %></p>
+          </div>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>

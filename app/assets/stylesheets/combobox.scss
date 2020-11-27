@@ -1,0 +1,53 @@
+.combobox {
+    margin-top: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.search-room {
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+.search-box {
+    position: absolute;
+    background: rgb(133, 171, 0);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover>.search-txt {
+    width: 200px;
+    /* padding: 0 6px; */
+}
+
+.search-btn {
+    color: black;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: none;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    /* line-height: 40px; */
+    width: 0px;
+    transition: 0.5s;
+}
+
+.img-service {
+    width: 40%;
+}

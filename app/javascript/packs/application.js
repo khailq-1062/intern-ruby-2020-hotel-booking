@@ -3,10 +3,19 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= require jquery-ui
+//= require owl.carousel
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("packs/contact.js")
+require("packs/")
+require("packs/boostrap.min.js")
+require("packs/custom.js")
+require("packs/jquery-2.2.4.min.js")
+require("packs/jquery")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
