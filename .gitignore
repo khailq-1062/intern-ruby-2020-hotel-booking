@@ -47,7 +47,6 @@ yarn-debug.log*
 /config/database.yml
 /test/*
 .package-lock.json
-
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml

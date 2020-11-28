@@ -1,13 +1,13 @@
 <li class="img-cap-effect">
   <div class="img-box">
-    <%= link_to room_path(item.slug) do %>
+    <%= link_to room_path(relate_room.slug) do %>
       <%= image_tag "https://a0.muscache.com/im/pictures/137ad772-ff8b-47a7-a956-b2e0d4714413.jpg?im_w=720", class: "img-relate" %>
     <% end %>
   </div>
   <div class="content">
     <%= link_to "#" do %>
-      <h4><%= item.name %></h4>
+      <h4><%= relate_room.name %></h4>
     <% end %>
-    <h6>$<%= item.price %><span>/ <%= t "rooms.per_night" %></span></h6>
+    <h6>$<%= relate_room.price %><span>/ <%= t "rooms.per_night" %></span></h6>
   </div>
 </li>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "static_pages#home"
-
-    get "/categories/:slug", to: "rooms#index"
+    get "/categories/:slug/rooms", to: "rooms#index"
+    get "/room/:slug", to: "rooms#show", as: "room"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"

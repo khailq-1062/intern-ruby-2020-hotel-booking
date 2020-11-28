@@ -7,6 +7,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require owl.carousel
+//= require rails-ujs
+//= require jquery
+//= require bootstrap-sprockets
 
 require("@rails/ujs").start()
 require("turbolinks").start()
