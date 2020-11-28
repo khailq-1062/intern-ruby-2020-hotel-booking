@@ -10,6 +10,7 @@ vi:
   created: "Được tạo bởi"
   lake_resort: "Khu nghỉ dưỡng ven hồ"
   location: "Hà Đông - Hà Nội"
+  base_title: "Khu nghỉ dưỡng ven hồ"
   layouts:
     sub_title: "Lake Resort || khu nghỉ dưỡng cao cấp"
     stay: "Hãy cùng chúng tôi"
@@ -19,4 +20,10 @@ vi:
     read_more: "Đọc thêm"
     get_in_touch: "Liên lạc"
     quick_link: "Đường dẫn nhanh"
-    author: "MR Khải & MR Dương"
+    author: "MR Khải && MR Dương"
+  rooms:
+    type_room: "Loại phòng: "
+    per_night: "Một đêm"
+    view: "Xem phòng"
+    index:
+      total_record: "Tìm thấy: %{num} phòng"

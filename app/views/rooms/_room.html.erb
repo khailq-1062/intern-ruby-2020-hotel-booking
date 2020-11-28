@@ -1,0 +1,15 @@
+<div class="col-sm-4 nroom-grid">
+  <%= link_to "#", class: "room-img" do %>
+   <%= image_tag "https://a0.muscache.com/im/pictures/63a75654-7333-4184-844e-7e44444b37ad.jpg?im_w=720" %>
+  <% end %>
+  <div class="row this-conts">
+    <div class="media">
+      <div class="media-body this-title"><%= room.name %></div>
+      <div class="media-right">$<%= room.price %><small><%= t "rooms.per_night" %></small></div>
+    </div>
+    <p>
+      <%= truncate room.description, length: Settings.rooms.length_des %>
+    </p>
+    <%= link_to t("rooms.view"), "#", class: "read-more" %>
+  </div>
+</div>
