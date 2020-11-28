@@ -21,7 +21,7 @@ gem "config"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
 # gem "redis", "~> 4.0"
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "3.1.13"
 
 # gem "image_processing", "~> 1.2"
 

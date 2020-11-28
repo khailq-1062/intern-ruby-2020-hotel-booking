@@ -39,10 +39,25 @@
             </li>
             <li>
               <%= link_to "aboutus.html", aria_expanded: "false", class: "dropdown-toggle" do %>
-                <%= t "contact" %>
+              <%= t "contact" %>
                 <span class="glyphicon glyphicon-chevron-down"></span>
               <% end %>
             </li>
+            <% if logged_in? %>
+              <li>
+                <%= link_to logout_path, method: :delete, aria_expanded: "false", class: "dropdown-toggle" do %>
+                  <%= t "logout" %>
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to login_path, aria_expanded: "false", class: "dropdown-toggle" do %>
+                  <%= t "login" %>
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+                <% end %>
+              </li>
+            <%end%>
           </ul>
           <ul class="nav navbar-nav right-side-nav">
             <li class="dropdown">
@@ -77,6 +92,9 @@
         </div>
       </div>
     </nav>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
     <div class="nasir-subscribe-form-row row">
       <div class="container">
