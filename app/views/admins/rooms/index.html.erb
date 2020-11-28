@@ -1,0 +1,34 @@
+<% provide :title, t("admins.rooms.base_title")%>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"><%= t "admins.rooms.base_title" %></h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
+    </div>
+    <section class="content">
+      <div class="container-fluid">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><%= t "admins.rooms.id" %></th>
+              <th scope="col"><%= t "admins.rooms.name" %></th>
+              <th scope="col"><%= t "admins.rooms.cate" %></th>
+              <th scope="col"><%= t "admins.rooms.price" %></th>
+              <th scope="col"><%= t "admins.rooms.image" %></th>
+              <th scope="col"><%= t "admins.rooms.action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @rooms %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- /.content -->
+    <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+  </div>
