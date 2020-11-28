@@ -1,4 +1,5 @@
 vi:
+  search: "Tìm kiếm"
   copyright: "Bản quyền © Resort and Hotel 2016. Bảo lưu mọi quyền."
   login: "Đăng nhập"
   logout: "Đăng xuất"
@@ -36,3 +37,8 @@ vi:
     login_success: "Đăng nhhập thành công"
     new:
       base_title: "Đăng nhập"
+  searchs:
+    search: "Tìm kiếm"
+    input_name: "Nhập tên phòng"
+    input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
+    room_not_found: "Không có phòng nào được tìm thấy"
