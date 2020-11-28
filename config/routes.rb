@@ -10,5 +10,9 @@ Rails.application.routes.draw do
     get "/search", to: "search#index"
     get "categories", to: "categories#index"
     resources :users, except: %i(index destroy)
+
+    namespace :admins do
+      root to: "dashboard#index"
+    end
   end
 end
