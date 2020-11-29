@@ -7,7 +7,9 @@ class CreateRooms < ActiveRecord::Migration[6.0]
       t.float :price
       t.string :ward_id
       t.integer :max_person
-
+      t.text :description
+      t.integer :hired, default: 0
+      t.text :map
       t.timestamps
     end
   end

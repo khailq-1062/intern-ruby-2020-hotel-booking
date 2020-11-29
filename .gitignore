@@ -45,8 +45,7 @@ yarn-debug.log*
 .framgia-ci-result.temp.yml
 /config/credentials.yml.enc
 /config/database.yml
-/test
-/spec/helpers
+/test/*
 .package-lock.json
 
 config/settings.local.yml

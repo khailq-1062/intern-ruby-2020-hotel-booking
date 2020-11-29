@@ -8,4 +8,6 @@ class Room < ApplicationRecord
   scope :search_by_price, (lambda do |price|
     where "price <= ?", price if price.present?
   end)
+
+  scope :top_hired, ->{order hired: Settings.model.order.desc}
 end

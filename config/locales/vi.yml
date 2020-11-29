@@ -14,6 +14,8 @@ vi:
   lake_resort: "Khu nghỉ dưỡng ven hồ"
   location: "Hà Đông - Hà Nội"
   base_title: "Khu nghỉ dưỡng ven hồ"
+  new: "mới"
+  read_more: "Đọc thêm"
   layouts:
     sub_title: "Lake Resort || khu nghỉ dưỡng cao cấp"
     stay: "Hãy cùng chúng tôi"
@@ -42,3 +44,44 @@ vi:
     input_name: "Nhập tên phòng"
     input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
     room_not_found: "Không có phòng nào được tìm thấy"
+    author: "MR Khải & MR Dương"
+
+  rooms:
+    room:
+      details: "Chi tiet"
+      per_night: "Mot dem"
+      lorem: "lorem"
+
+  static_pages:
+    home:
+      new_friendships: "Khách hàng thân thiết"
+      five_start_rating: "Năm xếp hạng bắt đầu"
+      international_guests: "Khách hàng quốc tế"
+      served_breakfast: "món ăn sáng được phục vụ"
+      our_offers: "Sự cống hiến của chúng tôi"
+      pick_a_room_and_best_suits:
+        "Chọn một căn phòng và những bộ đồ phù hợp nhất"
+      lorems: "Mô tả linh tinh gi gì đó"
+      sale_off: "giảm giá"
+      weekend_spa_offer: "Ưu đãi spa cuối tuần"
+      enjoy_lux_and:
+        "Tận hưởng một ngày cuối tuần SPA sang
+        trọng dành riêng để giúp bạn thư giãn"
+      condition: "Điều kiện áp dụng"
+      in_winter_season: "Trong mùa đông"
+      honey_moon_offer: "Ưu đãi tuần trăng mật"
+      our_gallery: "Phòng trưng bày của chúng tôi"
+      pick_a_room_and_enjoy_best_budget: "Chọn phòng và hưởng giá ưu đãi"
+      our_staff: "Đội ngũ nhân viên"
+      exterior_view: "Quang cảnh bên ngoài"
+      bedroom: "Phòng ngủ"
+      swimming_pool: "Hồ bơi"
+      our_restaurant: "Nhà hàng của chúng tôi"
+      testimonials: "Lời chứng thực"
+      book_now: "Đặt ngay"
+      know_more: "Tìm hiểu thêm"
+      we_offer_you_the_best: "Chúng tôi mang đến cho bạn cơ hội tốt nhất"
+      previous: "Trước"
+      next: "Tiếp theo"
+      rooms_and_suits: "Phòng và những bộ đồ"
+      the_best_place_for_relax: "Nơi tốt nhất để thư giãn"
