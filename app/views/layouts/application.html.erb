@@ -12,14 +12,14 @@
     <nav id="main-navigation-wrapper" class="navbar navbar-default _fixed-header _light-header stricky">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to "index.html", class: "navbar-brand" do %>
+          <%= link_to root_path, class: "navbar-brand" do %>
             <%= image_tag("logo2.png", alt: "Logo") %>
           <% end %>
         </div>
         <div id="main-navigation" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li>
-              <%= link_to "index.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+              <%= link_to root_path, aria_expanded: "false", class: "dropdown-toggle" do %>
                 <%= t "home" %>
                 <span class="glyphicon glyphicon-chevron-down"></span>
               <% end %>
@@ -31,7 +31,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "aboutus.html", aria_expanded: "false", class: "dropdown-toggle" do %>
+              <%= link_to categories_path, aria_expanded: "false", class: "dropdown-toggle" do %>
                 <%= t "room" %>
                 <span class="glyphicon glyphicon-chevron-down"></span>
               <% end %>

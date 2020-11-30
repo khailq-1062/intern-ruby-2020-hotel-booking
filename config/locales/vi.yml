@@ -14,6 +14,7 @@ vi:
   lake_resort: "Khu nghỉ dưỡng ven hồ"
   location: "Hà Đông - Hà Nội"
   base_title: "Khu nghỉ dưỡng ven hồ"
+  categories: "Danh mục"
   new: "mới"
   read_more: "Đọc thêm"
   layouts:
@@ -63,6 +64,13 @@ vi:
     input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
     room_not_found: "Không có phòng nào được tìm thấy"
     author: "MR Khải & MR Dương"
+
+  rooms:
+    room:
+      details: "Chi tiet"
+      per_night: "Mot dem"
+      lorem: "lorem"
+      view: "Xem"
 
   static_pages:
     home:
