@@ -1,5 +1,7 @@
 vi:
   copyright: "Bản quyền © Resort and Hotel 2016. Bảo lưu mọi quyền."
+  login: "Đăng nhập"
+  logout: "Đăng xuất"
   home: "Trang chủ"
   about: "Giới thiệu"
   room: "Phòng"
@@ -27,3 +29,10 @@ vi:
     view: "Xem phòng"
     index:
       total_record: "Tìm thấy: %{num} phòng"
+  sessions:
+    email: "Email"
+    password: "Mật khẩu"
+    login_false: "Tài khoản hoặc mật khẩu không chính xác"
+    login_success: "Đăng nhhập thành công"
+    new:
+      base_title: "Đăng nhập"
