@@ -65,10 +65,11 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.float "price"
     t.string "ward_id"
     t.integer "max_person"
+    t.text "description"
+    t.integer "hired", default: 0
+    t.text "map"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "description"
-    t.text "map"
     t.index ["category_id"], name: "index_rooms_on_category_id"
   end
 

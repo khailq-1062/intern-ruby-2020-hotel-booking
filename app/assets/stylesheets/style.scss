@@ -1670,7 +1670,7 @@ header {
     left: 11px;
     right: 11px;
     bottom: 11px;
-    background: url(../images/our-resort/border.png) right top no-repeat;
+    background: url('http://designarc.biz/demos/lakecious/images/our-resort/border.png') right top no-repeat;
     background-size: 100% 100%;
 }
 
@@ -5042,7 +5042,7 @@ blockquote footer a {
 ============================== */
 
 .resort-counert {
-    background: url(../images/counter/1.jpg) 0 0 no-repeat fixed;
+    background: url('http://designarc.biz/demos/lakecious/images/counter/1.jpg') 0 0 no-repeat fixed;
     background-size: 100% 100%;
     position: relative;
     padding: 70px 0;
@@ -7708,7 +7708,7 @@ body {
 .nasir-home-search-block {
     margin: 0;
     padding: 260px 0 120px;
-    background: url(../images/slider/7.jpg) no-repeat scroll center center;
+    background: url('../images/slider/7.jpg') no-repeat scroll center center;
     background-size: cover;
 }
 
@@ -7810,7 +7810,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url(../images/slider/8.jpg) no-repeat scroll center bottom;
+    background: url('../images/slider/8.jpg') no-repeat scroll center bottom;
     opacity: 0.12;
 }
 
@@ -7818,7 +7818,7 @@ body {
 /*Explore*/
 
 .explore-video {
-    background: url(../images/slider/9.jpg) no-repeat fixed center center;
+    background: url('../images/slider/9.jpg') no-repeat fixed center center;
     background-size: cover;
     padding: 100px 0 90px;
     text-align: center;
@@ -8298,7 +8298,7 @@ body {
 
 .nasir-subscribe-form-row .this-dashed {
     border: 1px dashed #657f08;
-    background: url(../images/welcome/email-bg.png) no-repeat center bottom;
+    background: url('http://designarc.biz/demos/lakecious/images/welcome/email-bg.png') no-repeat center bottom;
     margin: 0;
     padding: 21px 30px;
 }
@@ -10613,4 +10613,16 @@ body {
 .fullwidth-slider .item:hover a,
 .fullwidth-slider .item:focus a {
     right: 0;
+}
+
+.top-hired-room{
+    width: 19%;
+}
+.div-hired-room-homepage{
+    display: flex;
+    justify-content: space-around;
+}
+
+.temple-class{
+    width: 19%;
 }

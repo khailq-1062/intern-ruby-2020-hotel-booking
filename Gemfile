@@ -5,6 +5,8 @@ ruby "2.7.0"
 
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "mysql2", "~> 0.5.3"
+gem "faker"
+gem "mini_magick"
 gem "puma", "~> 4.1"
 gem "sass-rails", ">= 6"
 gem "webpacker", "~> 4.0"
@@ -15,7 +17,6 @@ gem "font-awesome-rails"
 gem "jquery-ui-rails"
 gem "owlcarousel-rails"
 gem "bootstrap-sass", "~> 3.4.1"
-gem "sass-rails", ">= 6"
 gem "jquery-rails"
 gem "config"
 gem "kaminari"
@@ -32,6 +33,7 @@ group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "rspec-rails", "~> 4.0.1"
 end
 
 group :development do
@@ -45,13 +47,6 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
-end
-
-group :development, :test do
-  gem "rubocop", "~> 0.74.0", require: false
-  gem "rubocop-checkstyle_formatter", require: false
-  gem "rubocop-rails", "~> 2.3.2", require: false
-  gem "rspec-rails", "~> 4.0.1"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

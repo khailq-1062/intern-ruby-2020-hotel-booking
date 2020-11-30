@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <title><%= full_title yield(:title) %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <title><%= t "layouts.sub_title" %></title>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
   </head>
 
   <body>
