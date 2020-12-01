@@ -113,3 +113,6 @@ vi:
       next: "Tiếp theo"
       rooms_and_suits: "Phòng và những bộ đồ"
       the_best_place_for_relax: "Nơi tốt nhất để thư giãn"
+  admins:
+    title: "Trang quản trị"
+    home: "Trang chủ"
