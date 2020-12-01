@@ -1,13 +1,17 @@
-<li class="img-cap-effect">
-  <div class="img-box">
-    <%= link_to room_path(item.slug) do %>
-      <%= image_tag "https://a0.muscache.com/im/pictures/137ad772-ff8b-47a7-a956-b2e0d4714413.jpg?im_w=720", class: "img-relate" %>
-    <% end %>
+<div class="col-sm-4 nroom-grid">
+  <%= link_to "#", class: "room-img" do %>
+   <%= image_tag room.image %>
+  <% end %>
+  <div class="row this-conts">
+    <div class="media">
+      <div class="media-body this-title"><%= room.name %></div>
+      <div class="media-right">$<%= room.price %>
+        <small><%= t "rooms.per_night" %></small>
+      </div>
+    </div>
+    <p>
+      <%= truncate room.description, length: Settings.rooms.length_des %>
+    </p>
+    <%= link_to t(".view"), "#", class: "read-more" %>
   </div>
-  <div class="content">
-    <%= link_to "#" do %>
-      <h4><%= item.name %></h4>
-    <% end %>
-    <h6>$<%= item.price %><span>/ <%= t "rooms.per_night" %></span></h6>
-  </div>
-</li>
+</div>

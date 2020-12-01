@@ -1,5 +1,5 @@
 rooms:
-  length_des: 50
+  length_des: 45
   num_record: 6
   relate_recored: 4
 model:
@@ -7,3 +7,4 @@ model:
     desc: "desc"
   limit:
     top_hired_home_page: 5
+    rooms_per_cate: 6
