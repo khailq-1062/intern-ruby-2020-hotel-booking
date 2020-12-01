@@ -116,3 +116,6 @@ vi:
   admins:
     title: "Trang quản trị"
     home: "Trang chủ"
+  shared:
+    user_form:
+      send: "Gửi"

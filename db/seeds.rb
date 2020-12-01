@@ -17,7 +17,7 @@ end
   name = "Room#{n}"
   category_id = Faker::Number.between(from: 1, to: 3)
   price = Faker::Commerce.price(range: 500..1000)
-  image = "https://a0.muscach'e.com/im/pictures/08d92619-0634-415a-8554-f9aae7951e03.jpg?im_w=1200"
+  image = "https://a0.muscache.com/im/pictures/004e59f8-790a-4a27-bd2f-306a8e5ca1c2.jpg?im_w=960"
   ward_id = Faker::Number.between(from: 20000, to: 31120)
   max_person = Faker::Number.between(from: 3, to: 20)
   description = Faker::Lorem.paragraphs(number: 1, supplemental: true)
