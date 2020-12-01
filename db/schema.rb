@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_073537) do
+ActiveRecord::Schema.define(version: 2020_12_01_080558) do
 
-  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.bigint "room_id"
     t.datetime "date_start"
     t.datetime "date_end"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.index ["room_id"], name: "index_bookings_on_room_id"
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "room_id", null: false
     t.datetime "date_start"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.index ["room_id"], name: "index_order_details_on_room_id"
   end
 
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "note"
     t.datetime "created_at", precision: 6, null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "room_supplies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "room_supplies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.bigint "room_id", null: false
     t.bigint "supply_id", null: false
     t.integer "quantity"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.index ["supply_id"], name: "index_room_supplies_on_supply_id"
   end
 
-  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.bigint "category_id", null: false
@@ -70,16 +70,17 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.text "map"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "image"
     t.index ["category_id"], name: "index_rooms_on_category_id"
   end
 
-  create_table "supplies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "supplies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email"
     t.string "activation_digest"
     t.boolean "activated"
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_073537) do
     t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   add_foreign_key "order_details", "orders"

@@ -8,3 +8,9 @@ model:
   limit:
     top_hired_home_page: 5
     rooms_per_cate: 6
+    get_rooms_for_list_category: 6
+  validate:
+    max_name_user: 30
+    max_email_user: 45
+    min_password: 5
+    valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
