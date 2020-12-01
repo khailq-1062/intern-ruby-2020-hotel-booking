@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/search", to: "search#index"
     get "categories", to: "categories#index"
+    resources :users, except: %i(index destroy)
   end
 end
