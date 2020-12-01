@@ -8,4 +8,12 @@ module SessionsHelper
   def logged_in?
     current_user.present?
   end
+
+  def current_user? user
+    user && user == current_user
+  end
+
+  def login user
+    session[:user_id] = user.id
+  end
 end
