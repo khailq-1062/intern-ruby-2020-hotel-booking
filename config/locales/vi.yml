@@ -32,6 +32,24 @@ vi:
     view: "Xem phòng"
     index:
       total_record: "Tìm thấy: %{num} phòng"
+    related: "Có thể bạn muốn ở"
+    start_from: "Chỉ từ "
+    type_room: "Loại phòng: "
+    per_night: "Một đêm"
+    view: "Xem phòng"
+    cate_not_found: "Không tìm thấy loại phòng"
+    room_not_found: "Không tìm thấy phòng"
+    start: "Bắt đầu "
+    end: "Kết thúc"
+    person: "Chọn số lượng thành viên"
+    index:
+      total_record: "Tìm thấy: %{num} phòng"
+    show:
+      base_title: "Chi tiết phòng"
+    check: "Kiểm tra tình trạng phòng"
+    description: "Mô tả phòng"
+    facilities: "Các tiện nghi trong phòng : "
+    book_now: "Đặt phòng ngay"
   sessions:
     email: "Email"
     password: "Mật khẩu"
@@ -45,12 +63,6 @@ vi:
     input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
     room_not_found: "Không có phòng nào được tìm thấy"
     author: "MR Khải & MR Dương"
-
-  rooms:
-    room:
-      details: "Chi tiet"
-      per_night: "Mot dem"
-      lorem: "lorem"
 
   static_pages:
     home:
