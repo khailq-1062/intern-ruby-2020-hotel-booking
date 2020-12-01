@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: :show
+  before_action :find_user, only: %i(show edit update)
 
   def new
     @user = User.new
@@ -22,6 +22,18 @@ class UsersController < ApplicationController
 
     flash[:success] = t "something_wrong"
     redirect_to root_path
+  end
+
+  def edit; end
+
+  def update
+    if @user.update user_params
+      flash[:success] = t ".update_success"
+      redirect_to @user
+    else
+      flash[:danger] = t ".update_failed"
+      render :show
+    end
   end
 
   private
