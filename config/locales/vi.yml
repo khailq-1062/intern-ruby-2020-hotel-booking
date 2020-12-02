@@ -26,6 +26,7 @@ vi:
   password: "Mật khẩu"
   password_confirmation: "Xác nhận mật khẩu"
   edit_profile: "Cập nhật thông tin"
+  status: "Trạng thái"
   layouts:
     sub_title: "Lake Resort || khu nghỉ dưỡng cao cấp"
     stay: "Hãy cùng chúng tôi"
@@ -150,3 +151,8 @@ vi:
           attributes:
             category:
               required: "Loại phòng không đc để trống"
+  bookings:
+    check_room:
+      invalid_params: "Vui lòng chọn lại ngày bắt đầu và ngày kết thúc"
+      open: "Trống"
+      close: "Không còn trống"
