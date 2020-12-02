@@ -7,7 +7,6 @@ model:
     desc: "desc"
   limit:
     top_hired_home_page: 5
-    rooms_per_cate: 6
     get_rooms_for_list_category: 6
   validate:
     max_name_user: 30
