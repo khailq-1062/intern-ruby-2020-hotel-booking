@@ -14,4 +14,6 @@ class Room < ApplicationRecord
     where category_id: category_id if category_id.present?
   end)
   scope :random_room, ->{order "RAND()"}
+
+  delegate :name, to: :category, prefix: true
 end

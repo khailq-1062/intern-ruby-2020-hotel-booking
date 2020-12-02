@@ -73,14 +73,6 @@ vi:
     input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
     room_not_found: "Không có phòng nào được tìm thấy"
     author: "MR Khải & MR Dương"
-
-  rooms:
-    room:
-      details: "Chi tiet"
-      per_night: "Mot dem"
-      lorem: "lorem"
-      view: "Xem"
-
   static_pages:
     home:
       new_friendships: "Khách hàng thân thiết"
@@ -117,6 +109,15 @@ vi:
   admins:
     title: "Trang quản trị"
     home: "Trang chủ"
+    dashboard: "Bảng điều khiển"
+    rooms:
+      base_title: "Danh sách phòng"
+      id: "ID"
+      name: "Tên phòng"
+      price: "Giá phòng"
+      image: "Hình ảnh"
+      cate: "Loại phòng"
+      action: "Hành động"
   shared:
     user_form:
       send: "Gửi"

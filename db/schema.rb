@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_080558) do
     t.string "slug"
     t.bigint "category_id", null: false
     t.float "price"
-    t.text "image"
     t.string "ward_id"
     t.integer "max_person"
     t.text "description"
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_080558) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
-    t.string "name"
     t.string "activation_digest"
     t.boolean "activated"
     t.datetime "activated_at"

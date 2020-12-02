@@ -1,0 +1,11 @@
+<tr>
+  <th scope="row"><%= room.id %></th>
+  <td><%= room.name %></td>
+  <td><%= room.category_name %></td>
+  <td><%= room.price %></td>
+  <td><%= image_tag room.image, class: "image-show-admin" %></td>
+  <td>
+    <button type="button" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+  </td>
+</tr>
