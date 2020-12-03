@@ -1,4 +1,6 @@
 class Admins::RoomsController < Admins::BaseController
+  before_action :find_room, only: %i(edit update destroy)
+
   def index
     @rooms = Room.all
                  .includes(:category)
@@ -13,17 +15,46 @@ class Admins::RoomsController < Admins::BaseController
   def create
     @room = Room.new room_params
     if @room.save
-      flash[:success] = t "admins.rooms.add_success"
-      redirect_to new_admins_room_path
+      flash[:success] = t "admins.add_success"
+      redirect_to admins_rooms_path
     else
-      flash.now[:danger] = t "admins.rooms.add_false"
+      flash.now[:danger] = t "admins.add_false"
       render :new
     end
+  end
+
+  def edit; end
+
+  def update
+    if @room.update room_params
+      flash[:success] = t "admins.update_success"
+      redirect_to admins_rooms_path
+    else
+      flash.now[:danger] = t "admins.update_false"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @room.destroy
+      flash[:success] = t "admins.delete_success"
+    else
+      flash[:danger] = t "admins.delete_success"
+    end
+    redirect_to admins_rooms_path
   end
 
   private
 
   def room_params
     params.require(:room).permit Room::ROOM_PERMIT
+  end
+
+  def find_room
+    @room = Room.find_by id: params[:id]
+    return if @room
+
+    flash[:danger] = t "admins.room_not_found"
+    redirect_to admins_root_path
   end
 end

@@ -6,12 +6,18 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "admins/admins", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "admins/admins", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body class="sb-nav-fixed">
     <%= render "layouts/admins/layouts/navbar" %>
     <div id="layoutSidenav">
       <%= render "layouts/admins/layouts/sidenav" %>
       <div id="layoutSidenav_content">
+        <div class="content-wrapper">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+        </div>
         <%= yield %>
         <%= render "layouts/admins/layouts/footer" %>
       </div>
