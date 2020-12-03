@@ -2,6 +2,7 @@ rooms:
   length_des: 45
   num_record: 6
   relate_recored: 4
+  min_num: 1
 model:
   order:
     desc: "desc"

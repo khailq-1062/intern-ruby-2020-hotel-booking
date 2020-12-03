@@ -107,17 +107,34 @@ vi:
       rooms_and_suits: "Phòng và những bộ đồ"
       the_best_place_for_relax: "Nơi tốt nhất để thư giãn"
   admins:
+    add_success: "Thêm mới thành công"
+    add_false: "Thêm mới thất bại"
+    update_success: "Cập nhật thành công"
+    update_false: "Cập nhật thất bại"
+    delete_success: "Xóa thành công"
+    delete_false: "Xóa thất bại"
     title: "Trang quản trị"
     home: "Trang chủ"
     dashboard: "Bảng điều khiển"
+    room_not_found: "Phòng không tồn tại"
+    you_sure: "Bạn chắc chứ ?"
     rooms:
+      submit: "Gửi"
       base_title: "Danh sách phòng"
+      new_title: "Thêm phòng mới"
+      edit_title: "Cập nhật thông tin phòng"
       id: "ID"
       name: "Tên phòng"
       price: "Giá phòng"
       image: "Hình ảnh"
       cate: "Loại phòng"
       action: "Hành động"
+      slug: "Tên viết tắt"
+      ward: "Địa điểm"
+      map: "Bản đồ"
+      des: "Mô tả"
+      max_person: "Sức chứa"
+      add: "Thêm mới"
   shared:
     user_form:
       send: "Gửi"
@@ -125,3 +142,10 @@ vi:
     update:
       update_success: "Cập nhật thành công"
       update_failed: "Cập nhật thất bại"
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            category:
+              required: "Loại phòng không đc để trống"
