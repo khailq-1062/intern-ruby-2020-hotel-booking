@@ -4,8 +4,9 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12 title-head">
             <h1 class="m-0"><%= t "admins.rooms.base_title" %></h1>
+            <%= link_to t("admins.rooms.add"), new_admins_room_path, class: "btn btn-warning float-right" %>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div>

@@ -111,13 +111,23 @@ vi:
     home: "Trang chủ"
     dashboard: "Bảng điều khiển"
     rooms:
+      new: "Thêm mới"
       base_title: "Danh sách phòng"
+      new_title: "Thêm phòng mới"
       id: "ID"
       name: "Tên phòng"
       price: "Giá phòng"
       image: "Hình ảnh"
       cate: "Loại phòng"
       action: "Hành động"
+      slug: "Tên viết tắt"
+      ward: "Địa điểm"
+      map: "Bản đồ"
+      des: "Mô tả"
+      max_person: "Sức chứa"
+      add_success: "Thêm phòng thành công"
+      add_false: "Thêm phòng thất bại"
+      add: "Thêm mới"
   shared:
     user_form:
       send: "Gửi"
@@ -125,3 +135,10 @@ vi:
     update:
       update_success: "Cập nhật thành công"
       update_failed: "Cập nhật thất bại"
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            category:
+              required: "Loại phòng không đc để trống"
