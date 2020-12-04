@@ -13,6 +13,11 @@
     <div id="layoutSidenav">
       <%= render "layouts/admins/layouts/sidenav" %>
       <div id="layoutSidenav_content">
+        <div class="content-wrapper">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+        </div>
         <%= yield %>
         <%= render "layouts/admins/layouts/footer" %>
       </div>
