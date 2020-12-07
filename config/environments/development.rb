@@ -67,6 +67,4 @@ Rails.application.configure do
     Bullet.raise = true # raise an error if n+1 query occurs
     Bullet.unused_eager_loading_enable = false
   end
-
-  config.middleware.use I18n::JS::Middleware
 end

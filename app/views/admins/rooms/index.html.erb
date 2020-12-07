@@ -1,14 +1,14 @@
 <% provide :title, t("admins.rooms.base_title")%>
+
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12 title-head">
             <h1 class="m-0"><%= t "admins.rooms.base_title" %></h1>
             <%= link_to t("admins.rooms.add"), new_admins_room_path, class: "btn btn-warning float-right" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+          </div>
+        </div>
       </div>
     </div>
     <section class="content">
@@ -30,6 +30,5 @@
         </table>
       </div>
     </section>
-    <!-- /.content -->
     <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
   </div>
