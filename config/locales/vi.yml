@@ -118,6 +118,7 @@ vi:
     dashboard: "Bảng điều khiển"
     room_not_found: "Phòng không tồn tại"
     you_sure: "Bạn chắc chứ ?"
+    not_admin: "Hãy đăng nhập bằng tài khoản admin"
     rooms:
       submit: "Gửi"
       base_title: "Danh sách phòng"
