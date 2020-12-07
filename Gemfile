@@ -24,6 +24,7 @@ gem "kaminari"
 gem "bootstrap-kaminari-views"
 # gem "redis", "~> 4.0"
 gem "bcrypt", "3.1.13"
+gem "font_awesome5_rails"
 
 # gem "image_processing", "~> 1.2"
 
