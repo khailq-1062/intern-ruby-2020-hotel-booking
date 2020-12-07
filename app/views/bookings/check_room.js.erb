@@ -1,0 +1,18 @@
+if(<%= @status == Booking::STATUSES[:failed] %>){
+  alert('<%= t ".invalid_params" %>');
+  $('#status-room').hide();
+} else {
+  if(<%= @status == Booking::STATUSES[:open] %>){
+    $('#result-check-room').text('<%= t ".open" %>');
+    $('#status-room').css('backgroundColor', '#85ab00');
+    $('#btn-bookroom').css('display', 'block');
+    $('#book_room_date_start').val('<%= @date_start %>');
+    $('#book_room_date_end').val('<%= @date_end %>');
+    $('#book_room_quantity_person').val(<%= @quantity_person %>);
+  } else {
+    $('#result-check-room').text('<%= t ".close" %>');
+    $('#status-room').css('backgroundColor', 'red');
+    $('#btn-bookroom').css('display', 'none');
+  }
+  $('#status-room').css('display', 'block');
+}

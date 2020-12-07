@@ -1,0 +1,6 @@
+if(<%= @result.present? %>) {
+  $("#btn-del-<%= params[:id] %>").parent().parent().remove();
+  alert("<%= t "admins.delete_success" %>")
+} else {
+  alert("<%= t "admins.delete_false" %>")
+}

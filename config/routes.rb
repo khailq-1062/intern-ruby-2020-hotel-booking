@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/search", to: "search#index"
     get "categories", to: "categories#index"
+    post "check_room", to: "bookings#check_room"
     resources :users, except: %i(index destroy)
 
     namespace :admins do

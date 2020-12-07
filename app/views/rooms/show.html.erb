@@ -25,25 +25,43 @@
           <p>$<%= @room.price %><span>/ <%= t "rooms.per_night" %></span></p>
         </div>
         <div class="book-form">
-          <div class="col-md-12"><b><%= t "rooms.start" %></b>
-            <input type="date" class="form-control datepicker-example8">
-          </div>
-          <div class="col-md-12"><b><%= t "rooms.end" %></b>
-            <input type="date" class="form-control datepicker-example8">
-          </div>
-          <div class="col-md-12"><b><%= t "rooms.person" %></b>
-            <div class="select-box">
-              <select name="selectMenu" class="select-menu">
-                <option value="default"><%= t "rooms.person" %></option>
-              </select>
+          <%= form_with url: check_room_path do %>
+            <div class="col-md-12"><b><%= t "rooms.start" %></b>
+              <%= date_field_tag :date_start, nil, class: "form-control datepicker-example8" %>
             </div>
-          </div>
-          <div class="col-md-12">
-            <div class="chk-button">
-              <button type="submit" class="res-btn"><%= t "rooms.check" %></button>
+            <div class="col-md-12"><b><%= t "rooms.end" %></b>
+              <%= date_field_tag :date_end, nil, class: "form-control datepicker-example8" %>
             </div>
-          </div>
+            <div class="col-md-12"><b><%= t "rooms.person" %></b>
+              <div class="select-box choose-person">
+                <button type="button" id="btn-sub-person" class="btn-edit-person">-</button>
+                <span id="quantity-person" class="quantity-person">0</span>
+                <%= hidden_field_tag :quantity_person, "0", id: "hidden_quantity_person" %>
+                <%= hidden_field_tag :maxperson, @room.max_person, id: "maxperson" %>
+                <%= hidden_field_tag :room_id, @room.id %>
+                <button type="button" id="btn-add-person" class="btn-edit-person">+</button>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="chk-button">
+                <%= submit_tag t("rooms.check"), class: "res-btn" %>
+              </div>
+            </div>
+          <% end %>
         </div>
+      </div>
+      <div class="status-room" id="status-room">
+        <div class="div-status-room">
+          <%= t "status" %>: <span id="result-check-room"></span>
+        </div>
+        <%= form_tag "#", method: :get do %>
+          <div class="room-overview">
+            <%= hidden_field_tag :date_start, nil, id: "book_room_date_start" %>
+            <%= hidden_field_tag :date_end, nil, id: "book_room_date_end" %>
+            <%= hidden_field_tag :quantity_person, nil, id: "book_room_quantity_person" %>
+            <%= submit_tag t("rooms.book_now"), class: "res-btn", id: "btn-bookroom" %>
+          </div>
+        <% end %>
       </div>
        <div class="single-sidebar-widget-outer">
         <div class="sec-title">
@@ -64,7 +82,7 @@
         <div class="single-r-wrapper">
           <div class="single-sl-room">
             <div data-hash="zero" class="owl-itemm">
-              <%= image_tag "https://a0.muscache.com/im/pictures/ee8757b5-390a-4b69-b223-685e4d746f11.jpg?im_w=720" %>
+              <%= image_tag @room.image %>
             </div>
           </div>
         </div>
@@ -86,10 +104,8 @@
           </div>
           <% end %>
       </div>
-      <div class="room-overview">
-        <%= link_to "#", class: "res-btn" do %>
-          <%= t "rooms.book_now" %><i class="fa fa-arrow-right"></i>
-        <% end %>
+      <div class="div-iframe-detail-room">
+        <iframe class="iframe-detail-room" src="<%= @room.map %>" frameborder="0"></iframe>
       </div>
     </div>
   </div>

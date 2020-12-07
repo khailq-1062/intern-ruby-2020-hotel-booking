@@ -9,6 +9,7 @@ model:
   limit:
     top_hired_home_page: 5
     get_rooms_for_list_category: 6
+    get_invalid_room: 1
   validate:
     max_name_user: 30
     max_email_user: 45
@@ -17,3 +18,5 @@ model:
 admin:
   logo_img: "AdminLTELogo.png"
   user_img: "user2-160x160.jpg"
+image:
+  icon_supply: "icon/icon2.gif"
