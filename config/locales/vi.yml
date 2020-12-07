@@ -107,7 +107,6 @@ vi:
       rooms_and_suits: "Phòng và những bộ đồ"
       the_best_place_for_relax: "Nơi tốt nhất để thư giãn"
   admins:
-<<<<<<< HEAD
     add_success: "Thêm mới thành công"
     add_false: "Thêm mới thất bại"
     update_success: "Cập nhật thành công"
@@ -150,7 +149,3 @@ vi:
           attributes:
             category:
               required: "Loại phòng không đc để trống"
-=======
-    title: "Trang quản trị"
-    home: "Trang chủ"
->>>>>>> e14729f... Add template admin
