@@ -1,0 +1,69 @@
+<%= form_for object_order, url: user_orders_path do |f| %>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".room_name" %></span>
+    <%= f.text_field :name,
+     value: name,
+     class: "col-md-9 form-control",
+     readonly: true %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".room_price" %></span>
+    <%= f.text_field :price,
+     value: price,
+     class: "col-md-9 form-control",
+     readonly: true %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".room_address" %></span>
+    <%= f.text_field :address,
+      value: room_address,
+      class: "col-md-9 form-control",
+      readonly: true %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".quantity_person" %></span>
+    <%= f.number_field :quantity_person,
+      value: quantity_person,
+      class: "col-md-9 form-control",
+      min: 0,
+      max: max_person %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".date_start" %></span>
+    <%= f.date_field :date_start,
+      value: date_start,
+      class: "col-md-9 form-control",
+      id: "input_date_start",
+      required: true %>
+  </div>
+  <div class="row-infor-order" id="warning-room-booked" style="display: none;">
+    <span class="col-md-12">
+      <%= t "choose_date_again" %>
+    </span>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".date_end" %></span>
+    <%= f.date_field :date_end,
+      value: date_end,
+      class: "col-md-9 form-control",
+      id: "input_date_end",
+      required: true %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".total_pay" %></span>
+    <%= f.text_field :price,
+      value: total_pay,
+      class: "col-md-9 form-control",
+      id: "input_total_pay",
+      readonly: true %>
+  </div>
+  <div class="row-infor-order">
+    <span class="col-md-3"><%= t ".note" %></span>
+    <%= f.text_area :note,
+      value: t(".note"),
+      class: "col-md-9 form-control ote-for-booking" %>
+  </div>
+  <%= hidden_field_tag :room_id, room_id %>
+  <%= f.submit t(".confirm"),
+    class: "btn btn-primary btn-login btn-booking form-control col-md-9", id: "btn-submit-booking" %>
+<% end %>
