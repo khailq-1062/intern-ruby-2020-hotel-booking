@@ -1,0 +1,7 @@
+<% if @room.destroyed? %>
+  $("#btn-del-<%= params[:id] %>").parent().parent().remove();
+  $('.number').text($('.number').text()-1)
+  alert("<%= t "admins.delete_success" %>")
+<% else %>
+  alert("<%= t "admins.delete_false" %>")
+<% end %>

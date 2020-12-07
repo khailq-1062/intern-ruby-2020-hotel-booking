@@ -3,6 +3,7 @@ class Admins::RoomsController < Admins::BaseController
 
   def index
     @rooms = Room.all
+                 .order_by(params[:order_key], params[:order_type])
                  .includes(:category)
                  .page(params[:page])
                  .per Settings.rooms.num_record
@@ -36,12 +37,8 @@ class Admins::RoomsController < Admins::BaseController
   end
 
   def destroy
-    if @room.destroy
-      flash[:success] = t "admins.delete_success"
-    else
-      flash[:danger] = t "admins.delete_success"
-    end
-    redirect_to admins_rooms_path
+    @room.destroy
+    respond_to :js
   end
 
   private

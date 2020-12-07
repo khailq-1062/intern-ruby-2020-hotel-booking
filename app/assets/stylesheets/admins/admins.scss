@@ -1,14 +1,31 @@
 @import "color.scss";
 @import "custom.scss";
-// $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
-// @import "@fortawesome/fontawesome-free/scss/fontawesome";
-// @import "@fortawesome/fontawesome-free/scss/solid";
-// @import "@fortawesome/fontawesome-free/scss/regular";
-// @import "@fortawesome/fontawesome-free/scss/brands";
-// @import "@fortawesome/fontawesome-free/scss/v4-shims";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
 @import "adminlte.components.css";
 @import "adminlte.core.css";
 @import "adminlte.css";
 @import "adminlte.extra-components.css";
 @import "adminlte.pages.css";
 @import "adminlte.plugins.css";
+
+.box-sort {
+  display: flex;
+  img {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+  }
+}
+
+.title-head {
+  display: flex;
+}
+
+.float-right {
+  position: absolute;
+  right: 0;
+} 

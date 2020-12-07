@@ -1,14 +1,14 @@
 <% provide :title, t("admins.rooms.base_title")%>
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12 title-head">
             <h1 class="m-0"><%= t "admins.rooms.base_title" %></h1>
-            <%= link_to t("admins.rooms.add"), new_admins_room_path, class: "btn btn-warning float-right" %>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+            <%= link_to t("admins.rooms.add"), new_admins_room_path,
+              class: "btn btn-warning float-right" %>
+          </div>
+        </div>
       </div>
     </div>
     <section class="content">
@@ -16,10 +16,66 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col"><%= t "admins.rooms.id" %></th>
-              <th scope="col"><%= t "admins.rooms.name" %></th>
-              <th scope="col"><%= t "admins.rooms.cate" %></th>
-              <th scope="col"><%= t "admins.rooms.price" %></th>
+              <th scope="col">
+                <div class="box-sort">
+                  <%= t "admins.rooms.id" %>
+                  <div class="btn-sort">
+                    <%= link_to admins_rooms_path(order_key: :id, order_type: :asc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.up %>
+                    <% end %>
+                    <%= link_to admins_rooms_path(order_key: :id, order_type: :desc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.down %>
+                    <% end %>
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="box-sort">
+                  <%= t "admins.rooms.name" %>
+                  <div class="btn-sort">
+                    <%= link_to admins_rooms_path(order_key: :name, order_type: :asc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.up %>
+                    <% end %>
+                    <%= link_to admins_rooms_path(order_key: :name, order_type: :desc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.down %>
+                    <% end %>
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="box-sort">
+                  <%= t "admins.rooms.cate" %>
+                  <div class="btn-sort">
+                    <%= link_to admins_rooms_path(order_key: :category_id, order_type: :asc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.up %>
+                    <% end %>
+                    <%= link_to admins_rooms_path(order_key: :category_id, order_type: :desc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.down %>
+                    <% end %>
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="box-sort">
+                  <%= t "admins.rooms.price" %>
+                  <div class="btn-sort">
+                    <%= link_to admins_rooms_path(order_key: :price, order_type: :asc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.up %>
+                    <% end %>
+                    <%= link_to admins_rooms_path(order_key: :price, order_type: :desc),
+                      class: "btn-asc" do %>
+                      <%= image_tag Settings.image.down %>
+                    <% end %>
+                  </div>
+                </div>
+              </th>
               <th scope="col"><%= t "admins.rooms.image" %></th>
               <th scope="col"><%= t "admins.rooms.action" %></th>
             </tr>
@@ -30,6 +86,5 @@
         </table>
       </div>
     </section>
-    <!-- /.content -->
     <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
   </div>

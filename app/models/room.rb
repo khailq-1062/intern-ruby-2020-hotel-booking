@@ -22,5 +22,10 @@ class Room < ApplicationRecord
   end)
   scope :random_room, ->{order "RAND()"}
 
+  scope :order_by, (lambda do |order_key, order_type|
+    order "#{order_key} #{order_type}" if order_type.present? &&
+                                          order_key.present?
+  end)
+
   delegate :name, to: :category, prefix: true
 end
