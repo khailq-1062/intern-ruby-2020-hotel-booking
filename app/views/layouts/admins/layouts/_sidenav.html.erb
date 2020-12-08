@@ -1,21 +1,17 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <%= link_to admins_root_path, class: "brand-link" do %>
-    <%= image_tag Settings.admin.logo_img, class: "brand-image img-circle elevation-3" %>
     <span class="brand-text font-weight-light"><%= t "admins.title" %></span>
   <% end %>
   <div class="sidebar">
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <%= image_tag Settings.admin.user_img, class: "img-circle elevation-2" %>
-      </div>
       <div class="info">
-        <%= link_to current_user.email, "#" %>
+        <%= t "admins.hello" %><%= link_to current_user.name, "#" %>
       </div>
     </div>
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item menu-open">
-            <%= link_to admins_root_path, class: "nav-link active" do %>
+            <%= link_to admins_root_path, class: "nav-link" do %>
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 <%= t "admins.dashboard" %>

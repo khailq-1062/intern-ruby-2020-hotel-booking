@@ -3041,6 +3041,7 @@ footer {
 .common-pad-inner {
   padding-top: 6.4em;
   padding-bottom: 3.4em;
+  max-width: 100%;
 }
 
 .common-pad-room {
@@ -10775,4 +10776,25 @@ body {
 
 #btn-bookroom{
   display: none;
+}
+
+.div-status-room{
+  margin-bottom: 20px;
+}
+
+.div-new-order{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row-infor-order{
+  margin-bottom: 10px;
+}
+
+.note-for-booking{
+  float: right;
+}
+
+.btn-booking{
+  float: right;
 }

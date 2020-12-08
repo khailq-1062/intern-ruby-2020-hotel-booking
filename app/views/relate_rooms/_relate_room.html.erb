@@ -5,7 +5,7 @@
     <% end %>
   </div>
   <div class="content">
-    <%= link_to "#" do %>
+    <%= link_to room_path(relate_room.slug) do %>
       <h4><%= relate_room.name %></h4>
     <% end %>
     <h6>$<%= relate_room.price %><span>/ <%= t "rooms.per_night" %></span></h6>

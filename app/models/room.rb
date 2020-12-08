@@ -16,11 +16,22 @@ class Room < ApplicationRecord
   scope :search_by_price, (lambda do |price|
     where "price <= ?", price if price.present?
   end)
+  scope :search_start_price, (lambda do |price|
+    where "price >= ?", price if price.present?
+  end)
+  scope :search_end_price, (lambda do |price|
+    where "price <= ?", price if price.present?
+  end)
   scope :top_hired, ->{order hired: Settings.model.order.desc}
   scope :relate_room, (lambda do |category_id|
     where category_id: category_id if category_id.present?
   end)
   scope :random_room, ->{order "RAND()"}
+
+  scope :order_by, (lambda do |order_key, order_type|
+    order "#{order_key} #{order_type}" if order_type.present? &&
+                                          order_key.present?
+  end)
 
   delegate :name, to: :category, prefix: true
 end

@@ -15,8 +15,15 @@ model:
     max_email_user: 45
     min_password: 5
     valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    max_length_note: 250
 admin:
-  logo_img: "AdminLTELogo.png"
-  user_img: "user2-160x160.jpg"
+  logo_img: "https://cdn.worldvectorlogo.com/logos/adminlte.svg"
+  user_img: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png"
+booking:
+  check_failed: 2
+  open_status: 0
+  close_status: 1
 image:
   icon_supply: "icon/icon2.gif"
+  up: "up.png"
+  down: "down.png"

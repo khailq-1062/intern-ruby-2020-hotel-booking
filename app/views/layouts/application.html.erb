@@ -4,6 +4,9 @@
     <title><%= t "layouts.sub_title" %></title>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "custom", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "i18n" %>
+    <%= javascript_include_tag "translations", skip_pipeline: true %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
@@ -168,3 +171,7 @@
     </footer>
   </body>
 </html>
+<script type="text/javascript">
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
+  I18n.locale = "<%= I18n.locale %>";
+</script>

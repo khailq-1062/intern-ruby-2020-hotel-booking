@@ -25,43 +25,39 @@
           <p>$<%= @room.price %><span>/ <%= t "rooms.per_night" %></span></p>
         </div>
         <div class="book-form">
-          <%= form_with url: check_room_path do %>
-            <div class="col-md-12"><b><%= t "rooms.start" %></b>
-              <%= date_field_tag :date_start, nil, class: "form-control datepicker-example8" %>
+          <div class="col-md-12"><b><%= t "rooms.start" %></b>
+            <%= date_field_tag :date_start, nil, class: "form-control datepicker-example8", id: "input_date_start_check" %>
+          </div>
+          <div class="col-md-12"><b><%= t "rooms.end" %></b>
+            <%= date_field_tag :date_end, nil, class: "form-control datepicker-example8", id: "input_date_end_check" %>
+          </div>
+          <div class="col-md-12"><b><%= t "rooms.person" %></b>
+            <div class="select-box choose-person">
+              <button type="button" id="btn-sub-person" class="btn-edit-person">-</button>
+              <span id="quantity-person" class="quantity-person">0</span>
+              <button type="button" id="btn-add-person" class="btn-edit-person">+</button>
             </div>
-            <div class="col-md-12"><b><%= t "rooms.end" %></b>
-              <%= date_field_tag :date_end, nil, class: "form-control datepicker-example8" %>
+          </div>
+          <div class="col-md-12">
+            <div class="chk-button">
+              <%= hidden_field_tag :room_id, @room.id, id: "room_id" %>
+              <% if logged_in? %>
+                <%= hidden_field_tag :form_book_room, new_user_order_url(current_user), id: "form_book_room" %>
+              <% else %>
+                <%= hidden_field_tag :form_book_room, nil, id: "form_book_room" %>
+              <% end %>
+              <%= submit_tag t("rooms.check"), class: "res-btn", id:"btn-check-room" %>
             </div>
-            <div class="col-md-12"><b><%= t "rooms.person" %></b>
-              <div class="select-box choose-person">
-                <button type="button" id="btn-sub-person" class="btn-edit-person">-</button>
-                <span id="quantity-person" class="quantity-person">0</span>
-                <%= hidden_field_tag :quantity_person, "0", id: "hidden_quantity_person" %>
-                <%= hidden_field_tag :maxperson, @room.max_person, id: "maxperson" %>
-                <%= hidden_field_tag :room_id, @room.id %>
-                <button type="button" id="btn-add-person" class="btn-edit-person">+</button>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="chk-button">
-                <%= submit_tag t("rooms.check"), class: "res-btn" %>
-              </div>
-            </div>
-          <% end %>
+          </div>
         </div>
       </div>
       <div class="status-room" id="status-room">
         <div class="div-status-room">
           <%= t "status" %>: <span id="result-check-room"></span>
         </div>
-        <%= form_tag "#", method: :get do %>
-          <div class="room-overview">
-            <%= hidden_field_tag :date_start, nil, id: "book_room_date_start" %>
-            <%= hidden_field_tag :date_end, nil, id: "book_room_date_end" %>
-            <%= hidden_field_tag :quantity_person, nil, id: "book_room_quantity_person" %>
-            <%= submit_tag t("rooms.book_now"), class: "res-btn", id: "btn-bookroom" %>
-          </div>
-        <% end %>
+        <div class="room-overview">
+          <%= submit_tag t("rooms.book_now"), class: "res-btn", id: "btn-bookroom" %>
+        </div>
       </div>
        <div class="single-sidebar-widget-outer">
         <div class="sec-title">
@@ -86,28 +82,82 @@
             </div>
           </div>
         </div>
-      <div class="room-dec-wrapper description">
-        <h2><%= t "rooms.description" %></h2>
-        <p>
-          <%= @room.description %>
-        </p>
-      </div>
-      <div class="room-fac-wrapper">
-        <% if @room.supplies.size > 0 %>
-          <h2><%= t "rooms.facilities" %></h2>
-          <div class="row">
-            <div class="ro-facilitie">
-              <ul class="clearfix">
-                <%= render @room.supplies %>
-              </ul>
+        <div class="room-dec-wrapper information">
+          <h2><%= t "rooms.information" %></h2>
+          <div class="overview-information">
+            <div>
+              <span class="col-md-2">
+                <%= t ".room_name" %>
+              </span>
+              <span class="col-md-10">
+                <%= @room.name %>
+              </span>
+            </div>
+            <div>
+              <span class="col-md-2">
+                <%= t ".room_ranking" %>
+              </span>
+              <span class="col-md-10">
+                <%= @room.category_name %>
+              </span>
+            </div>
+            <div>
+              <span class="col-md-2">
+                <%= t ".room_price" %>
+              </span>
+              <span class="col-md-10">
+                <%= @room.price %>
+              </span>
+            </div>
+            <div>
+              <span class="col-md-2">
+                <%= t ".room_address" %>
+              </span>
+              <span class="col-md-10">
+                <%= @room.address %>
+              </span>
+            </div>
+            <div>
+              <span class="col-md-2">
+                <%= t ".room_max_person" %>
+              </span>
+              <span class="col-md-10" id="maxperson">
+                <%= @room.max_person %>
+              </span>
             </div>
           </div>
+        </div>
+        <div class="room-dec-wrapper description">
+          <h2><%= t "rooms.description" %></h2>
+          <p>
+            <%= @room.description %>
+          </p>
+        </div>
+        <div class="room-fac-wrapper">
+          <% if @room.supplies.size > 0 %>
+            <h2><%= t "rooms.facilities" %></h2>
+            <div class="row">
+              <div class="ro-facilitie">
+                <ul class="clearfix">
+                  <%= render @room.supplies %>
+                </ul>
+              </div>
+            </div>
           <% end %>
+        </div>
+        <div class="div-iframe-detail-room">
+          <iframe class="iframe-detail-room" src="<%= @room.map %>" frameborder="0"></iframe>
+        </div>
       </div>
-      <div class="div-iframe-detail-room">
-        <iframe class="iframe-detail-room" src="<%= @room.map %>" frameborder="0"></iframe>
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div id="body-modal-confirm" class="modal-body">
       </div>
     </div>
   </div>
 </div>
-</section>
