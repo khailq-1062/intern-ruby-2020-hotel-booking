@@ -115,7 +115,7 @@
 	    line-height: 15px;
 	}
     /*                     */
-    
+
    .main-menu-wrapper-two .nav-holder {
 		width: 90%;
        position: absolute;
@@ -230,21 +230,17 @@
 	    text-align: center;
 	    line-height: 15px;
 	}
-    
-    
-    
-    
-    
 }
+
 @media (max-width: 1024px) {
    .ser-in-box{
         width: 25%;
-    } 
+    }
     .chk-button{
         width: 100%;
 		text-align: center;
 		margin-top: 15px;
-    }   
+    }
     .search-sec .overlay .border{
         padding: 1em;
     }
@@ -265,12 +261,12 @@
         width: 13vw;
     }
     .spa-offer .img_holder .room-ad-cont h3{
-        font-size: 1.2em; 
+        font-size: 1.2em;
     }
     .subscribe-wrp{
         padding: 1.8em 1em 0 0;
     }
-    
+
     .hidden-bar .hidden-bar-closer{
         left: -10px;
     }
@@ -279,20 +275,20 @@
     }
     .room-wrapper .media-left .img-holder{
         position: relative;
-       
+
     }
     .room-wrapper .media-left .img-holder img{
-        
+
     }
     .room-wrapper .media-right{
         width: 18%;
     }
     .room-t-wrapper .img-holder img{
-      width: 100%;  
+      width: 100%;
     }
     .room-t-wrapper .content{
         right: 0;
-       
+
     }
     .resort-r-value{
         margin-left: 0;
@@ -328,8 +324,8 @@
     .offer-right .offer-img-box2 .box1{
         margin-bottom: 0.5em;
     }
-    .offer-right .offer-img-box2 .box2 .img_holder .overlay {    
-    width: 58%;   
+    .offer-right .offer-img-box2 .box2 .img_holder .overlay {
+    width: 58%;
     padding: 1em;
 }
     .home-two-msgwrapper{
@@ -347,7 +343,7 @@
     }
     .wel-box .overlay .icon_position_table .icon_container h2{
         font-size: 1.33em;
-    }    
+    }
     .wel-box .overlay .icon_position_table .icon_container p{
         font-size: 1em;
     }
@@ -358,7 +354,7 @@
         display: none;
     }
     .bicycleing-img ul li:nth-child(3){
-       display: none; 
+       display: none;
     }
     .pull-right .single-sidebar-widget{
         padding-left: 0;
@@ -386,26 +382,26 @@
         margin-bottom: 2%;
     }
     .aminities-outer ul li:nth-child(2){
-       margin-right: 0; 
+       margin-right: 0;
     }
     .aminities-outer ul li:nth-child(3){
-       margin-left: 0; 
+       margin-left: 0;
     }
-    
+
 }
 @media (max-width: 980px) {
-    
-    
+
+
 }
 
 @media (max-width: 768px) {
-    
+
     .search-sec{
         width: 100%;
 		position: relative;
 		margin: 0;
     }
-    
+
      .ser-in-box{
         width: 25%;
     }
@@ -413,15 +409,15 @@
         width: 100%;
         text-align: center;
         margin: 0.5em 0 0;
-    }    
-    
+    }
+
     .our-res .left-pad{
         margin: 0;
     }
     .fluid-know-area .service-promo .promo-content{
         padding: 2em 0 0px 0em;
     }
-    
+
     .common-pad{
 /*
         padding-top: 3em;
@@ -440,7 +436,7 @@
     .res-btn i{
         margin-left: 7px;
     }
-    
+
     .promo-outer{
         padding-top: 2em;
         position: relative;
@@ -462,10 +458,10 @@
     }
     .room-wrapper .media-left,.room-wrapper .media-right,.room-wrapper .media-body{
         display: block;
-       
-    }    
+
+    }
     .room-wrapper .media-left{
-        padding-right: 0; 
+        padding-right: 0;
     }
     .room-wrapper .media-left .img-holder img{
         width: 100%;
@@ -510,13 +506,13 @@
     width: 100%;
     left: 0;
     right: 0;
-    }    
+    }
     .search-sec-homet{
 /*        background:rgba(13, 26, 65, 0.3) ;*/
 		width: 100%;
     }
     .search-sec-homet .overlay .border{
-      border: 1px solid rgba(13, 26, 65, 0.3);  
+      border: 1px solid rgba(13, 26, 65, 0.3);
     }
     .rest-fact-counter .text-box h4{
         font-size: 1.8em;
@@ -561,7 +557,7 @@
     .room-l-wrapper .content{
         left: auto;
     }
-    
+
 }
 
 @media (max-width: 767px) {
@@ -569,9 +565,9 @@
     width: 100%;
     display: block;
     text-align: center;
-} 
-	
-	
+}
+
+
     .search-sec{
         width: calc(100% + 30px);
 		margin: 0 -15px;
@@ -599,7 +595,7 @@
         position: relative;
     }
     .promo-wrapper .promo-imgslider .promo-content h2{
-     
+
         font-size: 1.8em;
     }
     .promo-wrapper .promo-imgslider .promo-content a{
@@ -635,6 +631,7 @@
     .common-pad-inner{
         padding-top: 2em;
         padding-bottom: 1.4em;
+        max-width: 100%;
     }
     .rest-fact-counter{
         padding: 2.4em 0;
@@ -672,13 +669,13 @@
     .event-wrapper{
         padding-left: 1em;
     }
-    
+
     .activities-outer{
         display: block;
         overflow: hidden;
     }
     .activities-outer img{
-       margin-top: 0.5em; 
+       margin-top: 0.5em;
     }
     .activities-content{
         padding-bottom: 1em;
@@ -720,25 +717,25 @@
     }
     .main-menu-wrapper-two .col-xs-12{
        position: absolute;
-       right: 0; 
+       right: 0;
     }
     .main-menu-wrapper-two .col-xs-6{
-       z-index: 1;  
+       z-index: 1;
     }
-    
+
 }
 
 
 @media (max-width: 414px) {
 
-    
+
 }
 
 @media (max-width: 480px) {
     .home-slider .carousel-caption{
         position: relative;
         color: #0e1322;
-    }  
+    }
     .home-slider .carousel-caption:before {
       background: rgba(0,0,0,0.3);
         width: 5%;
@@ -758,7 +755,7 @@
     }
     .fluid-know-area .service-promo .know-bot ul li .about-img{
         width:30%;
-        margin: 0 0.9em 0 0;       
+        margin: 0 0.9em 0 0;
     }
     .fluid-know-area .service-promo .know-bot ul li .about-cont p{
         font-size: 1em;
@@ -788,7 +785,7 @@
         margin-left: 0;
     }
     .testimonials-wrapper .owl-theme .owl-dots .owl-dot{
-       
+
     }
     .room-t-wrapper .content{
         padding: 18px;
@@ -834,7 +831,7 @@
         overflow: hidden;
     }
     .main-menu-wrapper-two .nav-holder .nav-header {
-       
+
         padding-right: 40px;
     }
     .home-slider2 .carousel-caption{
@@ -852,7 +849,7 @@
     .roomsuite-slider-two .owl-nav{
         top:-40px;
     }
-    
+
 }
 
 /* modal responsive styles */

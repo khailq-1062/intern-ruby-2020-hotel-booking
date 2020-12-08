@@ -16,7 +16,6 @@
 import $ from 'jquery';
 global.$ = jQuery;
 
-require("packs/room-detail.js")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()

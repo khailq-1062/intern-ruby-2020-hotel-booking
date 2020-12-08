@@ -1,4 +1,12 @@
 vi:
+  open: "Phòng trống"
+  close: "Phòng đã hết"
+  date_end_must_after_date_start:
+    "Ngày trả phòng không được trước ngày nhận phòng"
+  must_login: "Bạn cần đăng nhập để tiếp tục đặt phòng"
+  max_person_for_this_room: "Phòng đã đạt số người tối đa"
+  choose_date_again: "Khoảng thời gian này đã có người đặt phòng"
+  something_wrong: "Xảy ra lỗi"
   search: "Tìm kiếm"
   copyright: "Bản quyền © Resort and Hotel 2016. Bảo lưu mọi quyền."
   login: "Đăng nhập"
@@ -18,6 +26,9 @@ vi:
   categories: "Danh mục"
   new: "mới"
   read_more: "Đọc thêm"
+  subject_mail_order_new: "Bạn có 1 đơn đặt phòng mới!"
+  flash_create_new_order_success:
+    "Đơn hàng của bạn đã được chấp nhận, kiểm tra mail để xem thêm thông tin"
   email: "Email"
   name: "Tên"
   error: "Lỗi"
@@ -27,6 +38,9 @@ vi:
   password_confirmation: "Xác nhận mật khẩu"
   edit_profile: "Cập nhật thông tin"
   status: "Trạng thái"
+  login_to_continue: "Vui lòng đăng nhập để tiếp tục đặt phòng"
+  confirm_data: "Xác nhận thông tin"
+  booking_room: "Đặt phòng"
   layouts:
     sub_title: "Lake Resort || khu nghỉ dưỡng cao cấp"
     stay: "Hãy cùng chúng tôi"
@@ -57,10 +71,16 @@ vi:
       total_record: "Tìm thấy: %{num} phòng"
     show:
       base_title: "Chi tiết phòng"
+      room_name: "Tên phòng"
+      room_price: "Giá phòng"
+      room_address: "Địa chỉ"
+      room_max_person: "Số người tối đa"
+      room_ranking: "Hạng phòng"
     check: "Kiểm tra tình trạng phòng"
     description: "Mô tả phòng"
     facilities: "Các tiện nghi trong phòng : "
     book_now: "Đặt phòng ngay"
+    information: "Thông tin phòng"
   sessions:
     email: "Email"
     password: "Mật khẩu"
@@ -140,6 +160,16 @@ vi:
   shared:
     user_form:
       send: "Gửi"
+    order_form:
+      room_name: "Tên phòng"
+      room_price: "Giá phòng"
+      room_address: "Địa chỉ"
+      date_start: "Ngày nhận phòng"
+      date_end: "Ngày trả phòng"
+      total_pay: "Tổng thanh toán"
+      quantity_person: "Số người"
+      note: "Ghi chú"
+      confirm: "Xác nhận"
   users:
     update:
       update_success: "Cập nhật thành công"
@@ -156,3 +186,17 @@ vi:
       invalid_params: "Vui lòng chọn lại ngày bắt đầu và ngày kết thúc"
       open: "Trống"
       close: "Không còn trống"
+  orders:
+    new:
+      send: "Xác nhận"
+    create:
+      warning_for_quantity_person: "Số người không hợp lệ"
+  order_mailer:
+    create_order:
+      title_mail_create_order: "Đặt phòng"
+      information_order: "Thông tin đặt phòng"
+      room_name: "Tên phòng"
+      room_address: "Địa chỉ"
+      date_start: "Ngày nhận phòng"
+      date_end: "Ngày trả phòng"
+      total_pay: "Tổng tiền"

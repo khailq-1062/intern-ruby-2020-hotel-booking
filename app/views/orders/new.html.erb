@@ -1,0 +1,15 @@
+<section class="container clearfix common-pad-inner" style="max-width: 100%;">
+  <p><%= t "confirm_data" %></p>
+  <div class="div-new-order">
+    <%= render "shared/order_form", object_order: @order,
+                                    name: @room.name,
+                                    price: @room.price,
+                                    room_address: @room.address,
+                                    quantity_person: @quantity_person,
+                                    date_start: @date_start,
+                                    date_end: @date_end,
+                                    total_pay: @total_pay,
+                                    room_id: @room.id,
+                                    max_person: @room.max_person %>
+  </div>
+</section>
