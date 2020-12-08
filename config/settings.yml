@@ -20,3 +20,5 @@ admin:
   user_img: "user2-160x160.jpg"
 image:
   icon_supply: "icon/icon2.gif"
+  up: "up.png"
+  down: "down.png"

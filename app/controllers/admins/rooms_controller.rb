@@ -3,6 +3,7 @@ class Admins::RoomsController < Admins::BaseController
 
   def index
     @rooms = Room.all
+                 .order_by(params[:order_key], params[:order_type])
                  .includes(:category)
                  .page(params[:page])
                  .per Settings.rooms.num_record
@@ -36,7 +37,7 @@ class Admins::RoomsController < Admins::BaseController
   end
 
   def destroy
-    @result = @room.destroy
+    @room.destroy
     respond_to :js
   end
 
