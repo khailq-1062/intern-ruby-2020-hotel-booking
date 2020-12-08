@@ -5,6 +5,7 @@ class Room < ApplicationRecord
   belongs_to :category
   has_many :room_supplies, dependent: :destroy
   has_many :supplies, through: :room_supplies
+  has_many :orders, dependent: :destroy
 
   validates :name, :slug, :price, :description, :map, :image, presence: true
   validates :price, :max_person,

@@ -20,14 +20,19 @@ class Order < ApplicationRecord
   validates :quantity_person, numericality: {only_integer: true}
   validates :note, length: {maximum: Settings.model.validate.max_length_note}
 
-  delegate :name, to: :room
-  delegate :address, to: :room
+  delegate :name, :address, :price, to: :room, prefix: true
+  delegate :name, :color, to: :status, prefix: true
 
   accepts_nested_attributes_for :booking,
                                 reject_if: :all_blank,
                                 allow_destroy: true
 
-  def send_mail_create_order user
+  after_save :send_mail_create_order
+
+  scope :order_id_desc, ->{order id: :desc}
+  scope :order_status_asc, ->{order status_id: :asc}
+
+  def send_mail_create_order
     OrderMailer.create_order(user, self).deliver_now
   end
 

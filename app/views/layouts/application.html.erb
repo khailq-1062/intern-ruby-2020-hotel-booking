@@ -47,7 +47,7 @@
             </li>
             <% if logged_in? %>
               <li>
-                <%= link_to t("profile"), current_user %>
+                <%= link_to current_user.name, current_user %>
               </li>
               <li>
                 <%= link_to logout_path, method: :delete, aria_expanded: "false", class: "dropdown-toggle" do %>

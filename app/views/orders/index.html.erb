@@ -1,0 +1,51 @@
+<% provide :title, t("list_order")%>
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12 title-head">
+          <h1 class="m-0 text-success"><%= t "list_order" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="content">
+    <div class="container-fluid">
+      <table class="table text-info">
+        <thead>
+          <tr>
+            <th><%= t "id" %></th>
+            <th scope="col">
+              <%= t ".room_name" %>
+            </th>
+            <th scope="col" class="text-center">
+              <%= t ".room_address" %>
+            </th>
+            <th scope="col">
+              <%= t ".date_start" %>
+            </th>
+            <th scope="col">
+              <%= t ".date_end" %>
+            </th>
+            <th scope="col">
+              <%= t ".unit_price" %>
+            </th>
+            <th scope="col">
+              <%= t ".total_pay" %>
+            </th>
+            <th scope="col">
+              <%= t ".status" %>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @orders %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <div class="text-center">
+    <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+  </div>
+  </div>

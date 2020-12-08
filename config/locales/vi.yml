@@ -1,4 +1,5 @@
 vi:
+  list_order: "Danh sách phòng đã đặt"
   open: "Phòng trống"
   close: "Phòng đã hết"
   date_end_must_after_date_start:
@@ -187,6 +188,17 @@ vi:
       open: "Trống"
       close: "Không còn trống"
   orders:
+    index:
+      id: "STT"
+      room_name: "Tên phòng"
+      room_address: "Địa chỉ"
+      unit_price: "Đơn giá"
+      date_start: "Ngày nhận phòng"
+      date_end: "Ngày trả phòng"
+      total_pay: "Thanh toán"
+      status: "Trạng thái"
+    order:
+      edit: "Chỉnh sửa"
     new:
       send: "Xác nhận"
     create:
@@ -199,4 +211,5 @@ vi:
       room_address: "Địa chỉ"
       date_start: "Ngày nhận phòng"
       date_end: "Ngày trả phòng"
+      unit_price: "Đơn giá"
       total_pay: "Tổng tiền"
