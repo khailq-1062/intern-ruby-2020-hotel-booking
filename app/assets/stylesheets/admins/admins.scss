@@ -28,4 +28,37 @@
 .float-right {
   position: absolute;
   right: 0;
-} 
+}
+
+.btn {
+  margin: 20px 0;
+}
+
+.total-record {
+  color: $red;
+  margin: 20px;
+}
+
+.input-search {
+  margin-top: 15px;
+}
+
+.form-search-admin {
+  width: 80%;
+
+  .big-box-input {
+    display: flex;
+    .box-input {
+      width: 60%;
+      margin-right: 10px;
+    }
+
+    .box-submit {
+      display: block;
+    }
+  }
+}
+
+.btn-login {
+  display: block !important;
+}

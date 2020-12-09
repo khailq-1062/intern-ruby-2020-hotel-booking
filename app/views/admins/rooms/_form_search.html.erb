@@ -1,0 +1,15 @@
+<%= form_tag admins_rooms_path, class: "form-search-admin", id: "form-search-room-admin", method: :get do %>
+  <div class="big-box-input">
+    <div class="box-input">
+      <%= text_field_tag :name, params[:name], class: "form-control input-search", placeholder: t("searchs.input_name") %>
+      <%= number_field_tag :start_price, params[:start_price], class: "form-control input-search start_price", placeholder: t("searchs.start_price") %>
+    </div>
+    <div class="box-input">
+      <%= select_tag(:cate_id, options_from_collection_for_select(Category.all, :id, :name, params[:cate_id]), class: "form-control input-search", prompt: t("searchs.select_type_room")) %>
+      <%= number_field_tag :end_price, params[:end_price], class: "form-control input-search end_price", placeholder: t("searchs.end_price") %>
+    </div>
+  </div>
+  <div class="box-submit">
+    <%= submit_tag t("searchs.search"), class: "btn btn-primary btn-login" %>
+  </div>
+<% end %>

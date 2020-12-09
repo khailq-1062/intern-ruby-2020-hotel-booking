@@ -66,19 +66,10 @@
           </ul>
           <ul class="nav navbar-nav right-side-nav">
             <li class="dropdown">
-              <%= link_to "#" do %>
+              <%= link_to search_path do %>
                 <span class="phone-only"><%= t "search" %></span>
                 <i class="icon icon-Search"></i>
               <% end %>
-              <ul class="dropdown-submenu has-search-form align-right">
-                <li>
-                  <form action="#" class="navbar-form">
-                    <input type="text" placeholder="Enter Your Keyword">
-                    <button type="submit"><i class="icon icon-Search"></i></button>
-                  </form>
-                    <!-- /.navbar-form-->
-                </li>
-              </ul>
             </li>
             <li>
               <%= link_to "#sidebarCollapse", role: "button", data_toggle: "collapse", aria_expanded: "false", aria_controls: "sidebarCollapse" do %>
@@ -88,12 +79,6 @@
             </li>
           </ul>
             <!-- /.nav navbar-right-->
-          <form action="#" class="nav-search-form row">
-            <div class="input-group">
-              <input type="search" placeholder="Type here for search" class="form-control"><span class="input-group-addon">
-              <button type="submit"><i class="icon icon-Search"></i></button></span>
-            </div>
-          </form>
         </div>
       </div>
     </nav>
@@ -108,10 +93,6 @@
             <h2><%= t "layouts.stay" %></h2>
             <h3><%= t "layouts.sale" %></h3>
           </div>
-          <form action="#" method="post" class="this-form input-group">
-            <input type="email" placeholder="Enter your email address" class="form-control"><span class="input-group-addon">
-            <button type="submit" class="res-btn"><%= t "layouts.subscribe" %><i class="fa fa-arrow-right"></i></button></span>
-          </form>
         </div>
       </div>
     </div>

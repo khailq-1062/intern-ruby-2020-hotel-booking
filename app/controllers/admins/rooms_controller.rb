@@ -1,12 +1,12 @@
 class Admins::RoomsController < Admins::BaseController
   before_action :find_room, only: %i(edit update destroy)
+  before_action :get_room, only: :index
 
   def index
-    @rooms = Room.all
-                 .order_by(params[:order_key], params[:order_type])
-                 .includes(:category)
-                 .page(params[:page])
-                 .per Settings.rooms.num_record
+    @rooms = @rooms.order_by(params[:order_key], params[:order_type])
+                   .includes(:category)
+                   .page(params[:page])
+                   .per Settings.rooms.num_record
   end
 
   def new
@@ -53,5 +53,12 @@ class Admins::RoomsController < Admins::BaseController
 
     flash[:danger] = t "admins.room_not_found"
     redirect_to admins_root_path
+  end
+
+  def get_room
+    @rooms = Room.search_by_name(params[:name])
+                 .relate_room(params[:cate_id])
+                 .search_start_price(params[:start_price])
+                 .search_end_price params[:end_price]
   end
 end
