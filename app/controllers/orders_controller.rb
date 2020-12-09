@@ -10,6 +10,14 @@ class OrdersController < ApplicationController
 
   layout false, only: :new
 
+  def index
+    @orders = current_user.orders.includes(:room, :status)
+                          .order_id_desc
+                          .order_status_asc
+                          .page(params[:page])
+                          .per Settings.per.order
+  end
+
   def new
     return request.referer unless @booked_room.empty?
 
@@ -21,10 +29,9 @@ class OrdersController < ApplicationController
   def create
     order = current_user.orders.build order_params
     if order.save
-      order.send_mail_create_order current_user
       flash[:success] = t "flash_create_new_order_success"
     else
-      flash[:success] = t "something_wrong"
+      flash[:danger] = t "something_wrong"
     end
     redirect_to root_path
   end

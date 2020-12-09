@@ -2,3 +2,6 @@
 <div class="form-login">
   <%= render "shared/user_infor", user: @user %>
 </div>
+<%= link_to user_orders_path(current_user) do %>
+  <button class="btn btn-success"><%= t "list_order" %></button>
+<% end %>

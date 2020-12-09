@@ -70,14 +70,11 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 @import url(https://fonts.googleapis.com/css?family=Playball&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic,400);
-@import url("jquery.mCustomScrollbar.min.css");
-@import url("zebra-datepicker/default.css");
-
-/*change css file name to change date picker style */
-
-@import url("jquery.bxslider.css");
-@import url("strock-icon.css");
-@import url("jquery.fancybox.css");
+// @import url("stylesheets/jquery.mCustomScrollbar.min.css");
+// @import url("stylesheets/zebra-datepicker/default.css");
+// @import url("stylesheets/jquery.bxslider.css");
+// @import url("stylesheets/strock-icon.css");
+// @import url("stylesheets/jquery.fancybox.css");
 
 /* ==============================
    2 Global styles
@@ -89,12 +86,12 @@
 @import url(https://fonts.googleapis.com/css?family=Playball&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic,400);
 @import "https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i,900,900i";
-@import url("jquery.mCustomScrollbar.min.css");
-@import url("animate.min.css");
-@import url("zebra-datepicker/default.css");
-@import url("jquery.bxslider.css");
-@import url("strock-icon.css");
-@import url("jquery.fancybox.css");
+// @import url("stylesheets/jquery.mCustomScrollbar.min.css");
+// @import url("stylesheets/animate.min.css");
+// @import url("stylesheets/zebra-datepicker/default.css");
+// @import url("stylesheets/jquery.bxslider.css");
+// @import url("stylesheets/strock-icon.css");
+// @import url("stylesheets/jquery.fancybox.css");
 ul,
 li {
   margin: 0;
@@ -133,6 +130,12 @@ body {
   overflow-x: hidden;
   letter-spacing: 0.2px;
   color: #aaa;
+}
+
+.ptag-status{
+  padding-left: 20px;
+  border-radius: 5px;
+  color: black;
 }
 
 html {

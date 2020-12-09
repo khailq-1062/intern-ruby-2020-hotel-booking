@@ -6,6 +6,7 @@ rooms:
 model:
   order:
     desc: "desc"
+    asc: "asc"
   limit:
     top_hired_home_page: 5
     get_rooms_for_list_category: 6
@@ -27,3 +28,6 @@ image:
   icon_supply: "icon/icon2.gif"
   up: "up.png"
   down: "down.png"
+per:
+  order: 10
+format_date: "%d-%m-%Y"
