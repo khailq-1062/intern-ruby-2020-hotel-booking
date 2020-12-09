@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   validates :note, length: {maximum: Settings.model.validate.max_length_note}
 
   delegate :name, :address, :price, to: :room, prefix: true
-  delegate :name, :color, to: :status, prefix: true
+  delegate :name, to: :status, prefix: true
 
   accepts_nested_attributes_for :booking,
                                 reject_if: :all_blank,

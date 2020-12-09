@@ -1,0 +1,89 @@
+<section class="row final-inner-header">
+  <div class="container">
+    <h2 class="this-title"><%= t ".order_detail" %></h2>
+  </div>
+</section>
+<section class="row final-breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to t("home"), root_path %>
+      </li>
+      <li>
+        <%= link_to t(".list_order"), user_orders_path %>
+      </li>
+      <li class="active"><%= t ".order_detail" %></li>
+    </ol>
+  </div>
+</section>
+<div class="container div-detail-order-show text-info">
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".room_name" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :room_name,
+        @order.room_name,
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".room_address" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :room_adress,
+        @order.room_address,
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".room_price" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :room_price,
+        @order.room_price,
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".date_start" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :date_start,
+        @order.date_start.strftime(Settings.format_date),
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".date_end" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :date_end,
+        @order.date_end.strftime(Settings.format_date),
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <div class="line-detail-order">
+    <div class="col-md-2">
+      <%= t ".total_pay" %>
+    </div>
+    <div class="col-md-10">
+      <%= text_field_tag :order_price,
+        @order.price,
+        class: "form-control",
+        readonly: true %>
+    </div>
+  </div>
+  <%= link_to edit_user_order_path do %>
+    <button class="btn btn-success"><%= t ".edit" %></button>
+  <% end %>
+</div>

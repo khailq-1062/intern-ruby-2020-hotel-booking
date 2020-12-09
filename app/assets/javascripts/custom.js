@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require manage_order.js
 
 $(document).on('turbolinks:load', function() {
   const OPEN_STATUS = 'open';
