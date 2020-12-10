@@ -13,26 +13,35 @@
       </div>
     </div>
     <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item menu-open">
-            <%= link_to admins_root_path, class: "nav-link" do %>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item menu-open">
+          <%= link_to admins_root_path, class: "nav-link" do %>
             <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                <%= t "admins.dashboard" %>
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            <% end %>
-          </li>
-           <li class="nav-item menu-open">
-            <%= link_to admins_rooms_path, class: "nav-link" do %>
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                <%= t "admins.rooms.base_title" %>
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            <% end %>
-          </li>
-        </ul>
-      </nav>
+            <p>
+              <%= t "admins.dashboard" %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          <% end %>
+        </li>
+          <li class="nav-item menu-open">
+          <%= link_to admins_rooms_path, class: "nav-link" do %>
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              <%= t "admins.rooms.base_title" %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item menu-open">
+          <%= link_to admins_orders_path, class: "nav-link" do %>
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              <%= t "admins.orders.base_title" %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
   </div>
 </aside>
