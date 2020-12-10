@@ -32,3 +32,38 @@
   width: 120px;
   height: 92px;
 }
+
+.ptag-status{
+  padding-left: 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+.bg-pendding{
+  background-color: yellow;
+}
+
+.bg-approved{
+  background-color: green;
+}
+
+.bg-disapprove{
+  background-color: red;
+}
+
+.bg-cancel{
+  background-color: orangered;
+}
+
+.tr-order:hover{
+  background-color: salmon;
+}
+
+.div-detail-order-show{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.line-detail-order{
+  margin-bottom: 10px;
+}

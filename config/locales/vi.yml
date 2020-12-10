@@ -203,6 +203,17 @@ vi:
       date_end: "Ngày trả phòng"
       total_pay: "Thanh toán"
       status: "Trạng thái"
+    show:
+      list_order: "Danh sách"
+      order_detail: "Chi tiết đặt phòng"
+      room_name: "Tên phòng"
+      room_address: "Địa chỉ"
+      room_price: "Đơn giá"
+      date_start: "Ngày nhận phòng"
+      date_end: "Ngày trả phòng"
+      total_pay: "Thanh toán"
+      status: "Trạng thái"
+      edit: "Chỉnh sửa"
     order:
       edit: "Chỉnh sửa"
     new:

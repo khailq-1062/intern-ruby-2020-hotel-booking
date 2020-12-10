@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
   before_action :check_max_person,
                 only: :create
 
+  before_action :check_current_user, only: %i(index show)
+
   layout false, only: :new
 
   def index
@@ -16,6 +18,14 @@ class OrdersController < ApplicationController
                           .order_status_asc
                           .page(params[:page])
                           .per Settings.per.order
+  end
+
+  def show
+    @order = Order.find_by id: params[:id]
+    return if @order
+
+    flash[:danger] = t "something_wrong"
+    redirect_to user_orders_path current_user
   end
 
   def new
@@ -80,5 +90,13 @@ class OrdersController < ApplicationController
                 params[:order][:date_end].blank?
 
     (params[:order][:date_end].to_date - params[:order][:date_start].to_date)
+  end
+
+  def check_current_user
+    user = User.find_by id: params[:user_id]
+    return if current_user? user
+
+    flash[:danger] = t "something_wrong"
+    redirect_to user_orders_path current_user
   end
 end

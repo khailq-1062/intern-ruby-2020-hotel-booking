@@ -1,13 +1,15 @@
-<tr>
-  <td><%= order_counter %></td>
-  <td><%= order.room_name %></td>
-  <td><%= order.room_address %></td>
-  <td><%= order.date_start.strftime(Settings.format_date) %></td>
-  <td><%= order.date_end.strftime(Settings.format_date) %></td>
-  <td><%= order.room_price %>$</td>
-  <td><%= order.price %>$</td>
-  <td>
-    <p class="ptag-status" style="background: <%= order.status_color %>;">
+<tr data-link="<%= user_order_url(current_user, order) %>"
+  id="tr-order-<%= order.id %>"
+  class="text-info tr-order">
+  <td class="text-info"><%= order_counter %></td>
+  <td class="text-info"><%= order.room_name %></td>
+  <td class="text-info"><%= order.room_address %></td>
+  <td class="text-info"><%= order.date_start.strftime(Settings.format_date) %></td>
+  <td class="text-info"><%= order.date_end.strftime(Settings.format_date) %></td>
+  <td class="text-info"><%= order.room_price %></td>
+  <td class="text-info"><%= order.price %></td>
+  <td class="text-white">
+    <p class="ptag-status bg-<%= order.status_name %>">
       <%= order.status_name %>
     </p>
   <td>

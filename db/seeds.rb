@@ -13,15 +13,10 @@ supplies.each do |supply|
   )
 end
 
-statuses = {pendding: "yellow",
-            approved: "green",
-            disapprove: "red",
-            cancel: "grey",
-            done: "brown"}
-statuses.each do |status, color|
+statuses = ["pendding","approved","disapprove","cancel"]
+statuses.each do |status|
   Status.create!(
-    name: status,
-    color: color
+    name: status
   )
 end
 
