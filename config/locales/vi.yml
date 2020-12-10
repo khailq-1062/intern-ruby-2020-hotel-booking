@@ -95,6 +95,9 @@ vi:
     input_price: "Nhập giá phòng (chúng tôi sẽ tìm kiếm các phòng có giá <= giá bạn nhập)"
     room_not_found: "Không có phòng nào được tìm thấy"
     author: "MR Khải & MR Dương"
+    start_price: "Giá bắt đầu"
+    end_price: "Giá kết thúc"
+    select_type_room: "Hãy chọn loại phòng"
   static_pages:
     home:
       new_friendships: "Khách hàng thân thiết"
@@ -129,6 +132,8 @@ vi:
       rooms_and_suits: "Phòng và những bộ đồ"
       the_best_place_for_relax: "Nơi tốt nhất để thư giãn"
   admins:
+    err_price: "Giá phòng phải là số"
+    err_price2: "Giá bắt đầu phải nhỏ hơn giá kết thúc"
     add_success: "Thêm mới thành công"
     add_false: "Thêm mới thất bại"
     update_success: "Cập nhật thành công"
@@ -158,6 +163,7 @@ vi:
       des: "Mô tả"
       max_person: "Sức chứa"
       add: "Thêm mới"
+      find: "Số phòng tìm thấy:"
   shared:
     user_form:
       send: "Gửi"
