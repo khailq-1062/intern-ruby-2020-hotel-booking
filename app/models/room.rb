@@ -7,9 +7,12 @@ class Room < ApplicationRecord
   has_many :supplies, through: :room_supplies
   has_many :orders, dependent: :destroy
 
-  validates :name, :slug, :price, :description, :map, :image, presence: true
+  validates :name, :slug, :price,
+            :description, :map, :image, :address, presence: true
   validates :price, :max_person,
             numericality: {greater_than: Settings.rooms.min_num}
+  validates :name,
+            :address, :slug, length: {maximum: Settings.rooms.max_length_string}
 
   scope :search_end_price, (lambda do |price|
     where "price <= ?", price if price.present?

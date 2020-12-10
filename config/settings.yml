@@ -1,4 +1,5 @@
 rooms:
+  max_length_string: 255
   length_des: 45
   num_record: 6
   relate_recored: 4

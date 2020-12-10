@@ -98,6 +98,7 @@ vi:
     start_price: "Giá bắt đầu"
     end_price: "Giá kết thúc"
     select_type_room: "Hãy chọn loại phòng"
+    select_location_room: "Hãy chọn địa điểm phòng"
   static_pages:
     home:
       new_friendships: "Khách hàng thân thiết"
@@ -161,9 +162,11 @@ vi:
       ward: "Địa điểm"
       map: "Bản đồ"
       des: "Mô tả"
+      address: "Địa chỉ"
       max_person: "Sức chứa"
       add: "Thêm mới"
       find: "Số phòng tìm thấy:"
+      ward_id: "Địa điểm phòng không được để trống"
   shared:
     user_form:
       send: "Gửi"
@@ -187,7 +190,7 @@ vi:
         room:
           attributes:
             category:
-              required: "Loại phòng không đc để trống"
+              required: " không đc để trống"
   bookings:
     check_room:
       invalid_params: "Vui lòng chọn lại ngày bắt đầu và ngày kết thúc"
