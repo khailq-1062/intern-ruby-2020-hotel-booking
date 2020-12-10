@@ -1,4 +1,6 @@
 vi:
+  message_cannot_destroy_order: "Bạn đã đặt phòng quá 24 tiếng và đơn đặt phòng
+   đã được chấp nhận, vì vậy không thể hủy dược đơn đặt phòng này"
   list_order: "Danh sách phòng đã đặt"
   open: "Phòng trống"
   close: "Phòng đã hết"
@@ -221,6 +223,12 @@ vi:
       edit: "Chỉnh sửa"
     order:
       edit: "Chỉnh sửa"
+      are_you_sure: "Đơn đặt phòng sẽ bị xóa, bạn chắc chứ ?"
+      delete: "Xóa"
+      cancel: "Hủy phòng"
+    destroy:
+      delete_success: "Hủy phòng thành công"
+      delete_false: "Hủy phòng thất bại"
     new:
       send: "Xác nhận"
     create:

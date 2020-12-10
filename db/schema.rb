@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_031612) do
+ActiveRecord::Schema.define(version: 2020_12_10_103535) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "room_id"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2020_12_10_031612) do
     t.date "date_end"
     t.float "price"
     t.integer "quantity_person"
-    t.bigint "status_id", null: false
+    t.bigint "status", null: false
     t.index ["room_id"], name: "index_orders_on_room_id"
-    t.index ["status_id"], name: "index_orders_on_status_id"
+    t.index ["status"], name: "index_orders_on_status"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -86,10 +86,6 @@ ActiveRecord::Schema.define(version: 2020_12_10_031612) do
     t.index ["category_id"], name: "index_rooms_on_category_id"
   end
 
-  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "supplies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -115,7 +111,6 @@ ActiveRecord::Schema.define(version: 2020_12_10_031612) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "rooms"
   add_foreign_key "orders", "rooms"
-  add_foreign_key "orders", "statuses"
   add_foreign_key "orders", "users"
   add_foreign_key "room_supplies", "rooms"
   add_foreign_key "room_supplies", "supplies"

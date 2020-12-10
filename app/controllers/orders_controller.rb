@@ -9,11 +9,12 @@ class OrdersController < ApplicationController
                 only: :create
 
   before_action :check_current_user, only: %i(index show)
+  before_action :find_order, only: :destroy
 
   layout false, only: :new
 
   def index
-    @orders = current_user.orders.includes(:room, :status)
+    @orders = current_user.orders.includes(:room)
                           .order_id_desc
                           .order_status_asc
                           .page(params[:page])
@@ -46,12 +47,17 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @order.destroy if can_destroy?
+    respond_to :js
+  end
+
   private
 
   def order_params
     params[:order].merge! room_id: params[:room_id],
                           price: @room.price * (get_total_date + 1),
-                          status_id: 1,
+                          status: Settings.status.pendding,
                           booking_attributes: booking_params
     params.require(:order).permit Order::ORDER_PARAMS
   end
@@ -72,7 +78,7 @@ class OrdersController < ApplicationController
   end
 
   def booking_params
-    {room_id: params[:order][:room_id],
+    {room_id: params[:room_id],
      date_start: params[:order][:date_start],
      date_end: params[:order][:date_end],
      quantity_person: params[:order][:quantity_person]}
@@ -98,5 +104,26 @@ class OrdersController < ApplicationController
 
     flash[:danger] = t "something_wrong"
     redirect_to user_orders_path current_user
+  end
+
+  def find_order
+    @order = Order.find_by id: params[:id]
+
+    return if @order
+
+    flash[:danger] = t "something_wrong"
+    redirect_to user_orders_path current_user
+  end
+
+  def can_destroy?
+    if @order.pendding_status?
+      true
+    elsif @order.approved_status?
+      not_expired = @order.not_expire_to_destroy?
+      @message = t "message_cannot_destroy_order" unless not_expired
+      not_expired
+    else
+      false
+    end
   end
 end

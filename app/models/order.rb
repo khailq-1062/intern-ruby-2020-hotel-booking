@@ -6,14 +6,13 @@ class Order < ApplicationRecord
     :date_end,
     :quantity_person,
     :price,
-    :status_id,
+    :status,
     booking_attributes: Booking::BOOKING_PARAMS
   ].freeze
 
   belongs_to :user
   belongs_to :room
   has_one :booking, dependent: :destroy
-  belongs_to :status
 
   validates :date_start, :date_end, presence: true
   validate :validate_date_booking
@@ -21,7 +20,6 @@ class Order < ApplicationRecord
   validates :note, length: {maximum: Settings.model.validate.max_length_note}
 
   delegate :name, :address, :price, to: :room, prefix: true
-  delegate :name, to: :status, prefix: true
 
   accepts_nested_attributes_for :booking,
                                 reject_if: :all_blank,
@@ -30,7 +28,10 @@ class Order < ApplicationRecord
   after_save :send_mail_create_order
 
   scope :order_id_desc, ->{order id: :desc}
-  scope :order_status_asc, ->{order status_id: :asc}
+  scope :order_status_asc, ->{order status: :asc}
+
+  enum status: {pendding: 0, approved: 1, disapprove: 2, cancel: 3},
+    _suffix: true
 
   def send_mail_create_order
     OrderMailer.create_order(user, self).deliver_now
@@ -42,5 +43,9 @@ class Order < ApplicationRecord
     return unless date_end < date_start
 
     errors.add(:date_end, I18n.t("date_end_must_after_date_start"))
+  end
+
+  def not_expire_to_destroy?
+    ((DateTime.now.to_time - created_at.to_time) / 1.hour).to_i < 24
   end
 end

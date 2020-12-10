@@ -4,17 +4,24 @@
   <td class="text-info"><%= order_counter %></td>
   <td class="text-info"><%= order.room_name %></td>
   <td class="text-info"><%= order.room_address %></td>
-  <td class="text-info"><%= order.date_start.strftime(Settings.format_date) %></td>
-  <td class="text-info"><%= order.date_end.strftime(Settings.format_date) %></td>
+  <td class="text-info"><%= order.date_start.strftime Settings.format_date %></td>
+  <td class="text-info"><%= order.date_end.strftime Settings.format_date %></td>
   <td class="text-info"><%= order.room_price %></td>
   <td class="text-info"><%= order.price %></td>
   <td class="text-white">
-    <p class="ptag-status bg-<%= order.status_name %>">
-      <%= order.status_name %>
+    <p class="ptag-status bg-<%= order.status_was %>">
+      <%= order.status_was %>
     </p>
   <td>
   <td>
-    <%= link_to t(".edit"), edit_user_order_path(current_user, order) %>
-    <%= link_to t(".delete"), user_order_path(current_user, order), method: :delete %>
+    <%= link_to t(".edit"), edit_user_order_path(current_user, order) %>|
+    <%= link_to t(".delete"), "#" %>|
+    <% if order.pendding_status? || order.approved_status? %>
+      <%= link_to t(".cancel"),
+        user_order_path(current_user, order),
+        method: :delete,
+        data: {confirm: t(".are_you_sure")},
+        remote: true %>
+    <% end %>
   </td>
 </tr>
