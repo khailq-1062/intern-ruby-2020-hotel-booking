@@ -1,7 +1,10 @@
 class SearchController < ApplicationController
   def index
-    @rooms = Room.search_by_name(params[:name])
-                 .search_by_price(params[:price])
+    @rooms = Room.includes(:category)
+                 .search_by_name(params[:name])
+                 .relate_room(params[:cate_id])
+                 .search_start_price(params[:start_price])
+                 .search_end_price(params[:end_price])
                  .page(params[:page]).per Settings.rooms.num_record
   end
 end

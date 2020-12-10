@@ -3,6 +3,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require manage_order.js
+//= require custom2.js
 
 $(document).on('turbolinks:load', function() {
   const OPEN_STATUS = 'open';
@@ -162,4 +163,14 @@ $(document).on('turbolinks:load', function() {
     $('#input_total_pay').val(total_pay);
     $('#btn-submit-booking').show();
   }
+});
+
+$( document ).ready(function() {
+  $(".date-picker").on("focus", function() {
+    $(this).prop('type', 'date');
+  });
+
+  $(".date-picker").on("focusout", function() {
+    $(this).prop('type', 'text');
+  });
 });

@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
   ROOM_PERMIT = %i(name slug category_id price ward_id
-                   max_person description map image).freeze
+                   max_person description map image address).freeze
 
   belongs_to :category
   has_many :room_supplies, dependent: :destroy

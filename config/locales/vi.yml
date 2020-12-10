@@ -97,6 +97,8 @@ vi:
     author: "MR Khải & MR Dương"
     start_price: "Giá bắt đầu"
     end_price: "Giá kết thúc"
+    date_start: "Ngày nhận phòng"
+    date_end: "Ngày trả phòng"
     select_type_room: "Hãy chọn loại phòng"
     select_location_room: "Hãy chọn địa điểm phòng"
   static_pages:

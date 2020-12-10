@@ -4,6 +4,7 @@ rooms:
   num_record: 6
   relate_recored: 4
   min_num: 1
+  min_price: 0
 model:
   order:
     desc: "desc"

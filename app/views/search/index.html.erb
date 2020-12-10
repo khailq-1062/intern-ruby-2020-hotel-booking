@@ -1,13 +1,10 @@
 <% provide :title, params[:key] ||= t("search") %>
-<div class="form-login">
-  <%= form_tag "/search", method: :get do %>
-    <%= text_field_tag :name, params[:name], class: "form-control input-search", placeholder: t("searchs.input_name") %>
-    <%= text_field_tag :price, params[:price], class: "form-control input-search", placeholder: t("searchs.input_price") %>
-
-    <%= submit_tag t("searchs.search"), class: "btn btn-primary btn-login" %>
-  <% end %>
-</div>
+<%= render "form_search" %>
 <section class="row nasir-room-grid">
+  <div class="total-record">
+    <%= t "admins.rooms.find" %>
+    <span class="number"><%= @rooms.total_count %></span>
+  </div>
   <div class="container">
     <div class="row">
       <% if @rooms.present? %>
