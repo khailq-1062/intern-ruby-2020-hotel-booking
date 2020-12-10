@@ -7,6 +7,7 @@
           placeholder: t("searchs.input_name") %>
       <%= number_field_tag :start_price, params[:start_price],
           class: "form-control input-search start_price",
+          min: Settings.rooms.min_price,
           placeholder: t("searchs.start_price") %>
     </div>
     <div class="box-input">
@@ -15,6 +16,7 @@
           class: "form-control input-search", prompt: t("searchs.select_type_room")) %>
       <%= number_field_tag :end_price, params[:end_price],
           class: "form-control input-search end_price",
+          min: Settings.rooms.min_price,
           placeholder: t("searchs.end_price") %>
     </div>
   </div>

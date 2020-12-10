@@ -10,4 +10,54 @@
 @import "owl.carousel.scss";
 @import "responsive.scss";
 @import "style.scss";
-@import "style1.scss"
+@import "style1.scss";
+
+.form-search-admin {
+  display: flex;
+}
+
+.box-input-search {
+  width: 90%;
+  margin: auto;
+  display: flex;
+
+  .input-search {
+    width: 25%;
+    margin-right: 10px;;
+  }
+}
+
+.box-submit {
+  margin-top: -10px;
+}
+
+.btn-login {
+  display: block !important;
+}
+
+.pagination li {
+  a {
+    position: relative;
+    float: left;
+    padding: 2px 10px;
+    line-height: 1.42857;
+    text-decoration: none;
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
+    margin: 5px;
+    margin-left: -1px;
+  }
+}
+
+.disabled a {
+  color: $white !important;
+}
+
+.total-record {
+  color: $red;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+}
