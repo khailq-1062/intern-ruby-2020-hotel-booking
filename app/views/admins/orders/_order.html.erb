@@ -1,0 +1,17 @@
+<tr>
+  <th scope="row"><%= order.id %></th>
+  <td><%= order.user_name %></td>
+  <td><%= order.room_name %></td>
+  <td><%= order.price %></td>
+  <td><%= order.status_was %></td>
+  <td>
+    <%= link_to edit_admins_room_path(order), class: "btn btn-success" do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to admins_room_path(order), method: :delete,
+        data: {confirm: t("admins.you_sure")},
+        class: "btn btn-danger", id: "btn-del-#{order.id}", remote: true do %>
+      <i class="fas fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

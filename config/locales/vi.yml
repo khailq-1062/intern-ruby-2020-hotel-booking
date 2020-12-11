@@ -171,6 +171,15 @@ vi:
       add: "Thêm mới"
       find: "Số phòng tìm thấy:"
       ward_id: "Địa điểm phòng không được để trống"
+    orders:
+      id: "ID"
+      base_title: "Danh sách order"
+      user_id: "Khach hang"
+      room_id: "Phong"
+      date_start: "Ngay bat dau"
+      date_end: "Ngay ket thuc"
+      price: "Gia phong"
+      status: "Trang thai"
   shared:
     user_form:
       send: "Gửi"
