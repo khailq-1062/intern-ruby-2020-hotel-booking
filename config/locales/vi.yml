@@ -1,4 +1,6 @@
 vi:
+  update_order_successful: "Cập nhật đơn đặt phòng thành công"
+  update_order_failed: "Cập nhật đơn đặt phòng thất bại"
   message_cannot_destroy_order: "Bạn đã đặt phòng quá 24 tiếng và đơn đặt phòng
    đã được chấp nhận, vì vậy không thể hủy dược đơn đặt phòng này"
   list_order: "Danh sách phòng đã đặt"

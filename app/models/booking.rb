@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   STATUSES = {open: "open", close: "close", failed: "failed"}.freeze
 
   scope :by_room_id, ->(room_id){where room_id: room_id}
+  scope :not_in_order, ->(order_id){where.not order_id: order_id}
   scope :check_status_by_date, (lambda do |date_start, date_end|
     where "((date_start BETWEEN '#{date_start}' AND '#{date_end}')
             OR (date_end BETWEEN '#{date_start}' AND '#{date_end}')
