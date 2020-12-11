@@ -10,6 +10,8 @@ class Order < ApplicationRecord
     booking_attributes: Booking::BOOKING_PARAMS
   ].freeze
 
+  ORDER_CHANGE_STATUS_PERMIT = :status
+
   belongs_to :user
   belongs_to :room
   has_one :booking, dependent: :destroy

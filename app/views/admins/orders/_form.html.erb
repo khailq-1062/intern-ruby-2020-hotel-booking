@@ -1,0 +1,19 @@
+<%= form_for [:admins, @order] do |f| %>
+  <%= f.label t("admins.orders.user_id"), class: "input-presence" %>
+  <%= f.text_field :user_id, class: "form-control", value: @order.user_name, readonly: true %>
+  <%= f.label t("admins.orders.room_id"), class: "input-presence" %>
+  <%= f.text_field :room_id, class: "form-control", value: @order.room_name, readonly: true %>
+  <%= f.label t("admins.orders.note"), class: "input-presence" %>
+  <%= f.text_field :note, class: "form-control", value: @order.note, readonly: true %>
+  <%= f.label t("admins.orders.price"), class: "input-presence" %>
+  <%= f.text_field :price, class: "form-control", value: @order.price, readonly: true %>
+  <%= f.label t("admins.orders.date_start"), class: "input-presence" %>
+  <%= f.text_field :date_start, class: "form-control", value: @order.date_start, readonly: true %>
+  <%= f.label t("admins.orders.date_end"), class: "input-presence" %>
+  <%= f.text_field :date_end, class: "form-control", value: @order.date_end, readonly: true %>
+  <%= f.label t("admins.orders.status"), class: "input-presence" %>
+  <div class="select-option">
+    <%= f.select :status, {collection: Order.statuses.keys.to_a}, selected: "cancel" %>
+  </div>
+  <%= f.submit t("admins.rooms.submit"), class: "btn btn-primary" %>
+<% end %>
