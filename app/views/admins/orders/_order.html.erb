@@ -5,7 +5,7 @@
   <td><%= order.price %></td>
   <td><%= order.status_was %></td>
   <td>
-    <%= link_to edit_admins_room_path(order), class: "btn btn-success" do %>
+    <%= link_to edit_admins_order_path(order), class: "btn btn-success" do %>
       <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %>
     <%= link_to admins_room_path(order), method: :delete,

@@ -174,8 +174,10 @@ vi:
     orders:
       id: "ID"
       base_title: "Danh sách order"
+      edit_title: "Cap nhat trang thai order"
       user_id: "Khach hang"
       room_id: "Phong"
+      note: "Ghi chu"
       date_start: "Ngay bat dau"
       date_end: "Ngay ket thuc"
       price: "Gia phong"
