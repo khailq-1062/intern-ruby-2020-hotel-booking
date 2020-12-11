@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :check_login
-  before_action :find_room, only: %i(new create)
+  before_action :check_current_user
+  before_action :find_room, only: %i(new create update)
   before_action :valid_date_for_booking,
                 :get_booked_room_for_booking,
                 only: :new
@@ -8,8 +9,7 @@ class OrdersController < ApplicationController
   before_action :check_max_person,
                 only: :create
 
-  before_action :check_current_user, only: %i(index show)
-  before_action :find_order, only: :destroy
+  before_action :find_order, except: %i(index new create)
 
   layout false, only: :new
 
@@ -21,20 +21,18 @@ class OrdersController < ApplicationController
                           .per Settings.per.order
   end
 
-  def show
-    @order = Order.find_by id: params[:id]
-    return if @order
-
-    flash[:danger] = t "something_wrong"
-    redirect_to user_orders_path current_user
-  end
+  def show; end
 
   def new
     return request.referer unless @booked_room.empty?
 
-    @order = current_user.orders.new
-    @quantity_person = params[:quantity_person]
-    @total_pay = (@date_end.to_date - @date_start.to_date + 1) * @room.price
+    hash_params = {room: @room,
+                   quantity_person: params[:quantity_person],
+                   date_start: @date_start,
+                   date_end: @date_end,
+                   price:
+                   (@date_end.to_date - @date_start.to_date + 1) * @room.price}
+    @order = current_user.orders.new hash_params
   end
 
   def create
@@ -42,14 +40,29 @@ class OrdersController < ApplicationController
     if order.save
       flash[:success] = t "flash_create_new_order_success"
     else
-      flash[:danger] = t "something_wrong"
+      flash.now[:danger] = t "something_wrong"
     end
     redirect_to root_path
   end
 
   def destroy
-    @order.destroy if can_destroy?
+    if can_destroy?
+      @order.update status: "cancel"
+      @message = t "orders.destroy.delete_success"
+    end
     respond_to :js
+  end
+
+  def edit; end
+
+  def update
+    if @order.update order_params
+      flash[:success] = t "update_order_successful"
+      redirect_to user_orders_path
+    else
+      flash[:danger] = t "update_order_failed"
+      render :edit
+    end
   end
 
   private

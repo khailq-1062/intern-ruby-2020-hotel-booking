@@ -1,10 +1,8 @@
-<% if @order.destroyed? %>
-  $("#tr-order-<%= @order.id %>").remove();
-  alert("<%= t ".delete_success" %>")
+<% if @message.present? %>
+  alert("<%= @message %>");
+  $("#p-status-<%= @order.id %>").addClass("bg-<%= @order.status_was %>");
+  $("#p-status-<%= @order.id %>").html("<%= @order.status_was %>");
+  $("#btn-cancel-order-<%= @order.id %>").remove();
 <% else %>
-  <% if @message.present? %>
-    alert("<%= @message %>");
-  <% else %>
-    alert("<%= t ".delete_false" %>");
-  <% end %>
+  alert("<%= t ".delete_false" %>");
 <% end %>

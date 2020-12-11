@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: %i(show edit update)
+  before_action :find_user, :check_current_user, only: %i(show edit update)
 
   def new
     @user = User.new
@@ -43,10 +43,14 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find params[:id]
+    @user = User.find_by id: params[:id]
     return if @user
 
     flash[:danger] = t "something_wrong"
     redirect_to root_path
+  end
+
+  def check_current_user
+    current_user? @user
   end
 end

@@ -16,6 +16,7 @@ $(document).on('turbolinks:load', function() {
   $('#btn-check-room').click(function(){
     let date_start = convert_date($('#input_date_start_check').val());
     let date_end = convert_date($('#input_date_end_check').val());
+    let order_exist = $('#order_exist').val();
     let room_id = parseInt($('#room_id').val());
     $.ajax({
       url: url_check_room,
@@ -23,6 +24,7 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json',
       data: {
         room_id: room_id,
+        order_exist: order_exist,
         date_start: date_start,
         date_end: date_end
       },
@@ -49,6 +51,7 @@ $(document).on('turbolinks:load', function() {
     }else{
       let date_start = convert_date($('#input_date_start_check').val());
       let date_end = convert_date($('#input_date_end_check').val());
+      let order_exist = $('#order_exist').val();
       let room_id = parseInt($('#room_id').val());
       let quantity_person = parseInt($('#quantity-person').html());
       $.ajax({
@@ -56,6 +59,7 @@ $(document).on('turbolinks:load', function() {
         method: 'get',
         data: {
           room_id: room_id,
+          order_exist: order_exist,
           date_start: date_start,
           date_end: date_end,
           quantity_person: quantity_person
@@ -105,6 +109,7 @@ $(document).on('turbolinks:load', function() {
 
   $(document).on('change', '#input_date_start', function(){
     let date_start = convert_date($('#input_date_start').val());
+    let order_exist = $('#order_exist').val();
     let date_end = convert_date($('#input_date_end').val());
     let room_id = parseInt($('#room_id').val());
     $.ajax({
@@ -113,6 +118,7 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json',
       data: {
         room_id: room_id,
+        order_exist: order_exist,
         date_start: date_start,
         date_end: date_end
       },
@@ -128,6 +134,7 @@ $(document).on('turbolinks:load', function() {
 
   $(document).on('change', '#input_date_end', function(){
     let date_start = convert_date($('#input_date_start').val());
+    let order_exist = $('#order_exist').val();
     let date_end = convert_date($('#input_date_end').val());
     let room_id = parseInt($('#room_id').val());
     $.ajax({
@@ -136,6 +143,7 @@ $(document).on('turbolinks:load', function() {
       dataType: 'json',
       data: {
         room_id: room_id,
+        order_exist: order_exist,
         date_start: date_start,
         date_end: date_end
       },
@@ -156,7 +164,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   function calculate_total_pay(date_start, date_end){
-    let unit_price = parseFloat($('#order_price').val());
+    let unit_price = parseFloat($('#order_room_price').val());
     let date1 = new Date(convert_date(date_start));
     let date2 = new Date(convert_date(date_end));
     let total_day = parseInt(((date2.getTime() - date1.getTime())) / (1000 * 3600 * 24)) + 1;

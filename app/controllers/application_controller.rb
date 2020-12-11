@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def get_booked_room_for_booking
     @booked_room = Booking.by_room_id(params[:room_id])
+                          .not_in_order(params[:order_exist].presence || 0)
                           .check_status_by_date @date_start, @date_end
   end
 end
