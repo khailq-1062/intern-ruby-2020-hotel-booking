@@ -33,3 +33,5 @@ image:
 per:
   order: 10
 format_date: "%d-%m-%Y"
+status:
+  pendding: "pendding"

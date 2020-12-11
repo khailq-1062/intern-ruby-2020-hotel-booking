@@ -13,13 +13,6 @@ supplies.each do |supply|
   )
 end
 
-statuses = ["pendding","approved","disapprove","cancel"]
-statuses.each do |status|
-  Status.create!(
-    name: status
-  )
-end
-
 200.times do |n|
   name = "Room#{n}"
   category_id = Faker::Number.between(from: 1, to: 3)

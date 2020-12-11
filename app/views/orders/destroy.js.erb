@@ -1,0 +1,10 @@
+<% if @order.destroyed? %>
+  $("#tr-order-<%= @order.id %>").remove();
+  alert("<%= t ".delete_success" %>")
+<% else %>
+  <% if @message.present? %>
+    alert("<%= @message %>");
+  <% else %>
+    alert("<%= t ".delete_false" %>");
+  <% end %>
+<% end %>
