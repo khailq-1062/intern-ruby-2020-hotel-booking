@@ -26,11 +26,11 @@
                 <%= t "admins.rooms.id" %>
                 <div class="btn-sort">
                   <%= link_to admins_rooms_path(order_key: :id, order_type: :asc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.up %>
                   <% end %>
                   <%= link_to admins_rooms_path(order_key: :id, order_type: :desc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.down %>
                   <% end %>
                 </div>
@@ -41,11 +41,11 @@
                 <%= t "admins.rooms.name" %>
                 <div class="btn-sort">
                   <%= link_to admins_rooms_path(order_key: :name, order_type: :asc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.up %>
                   <% end %>
                   <%= link_to admins_rooms_path(order_key: :name, order_type: :desc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.down %>
                   <% end %>
                 </div>
@@ -56,11 +56,11 @@
                 <%= t "admins.rooms.cate" %>
                 <div class="btn-sort">
                   <%= link_to admins_rooms_path(order_key: :category_id, order_type: :asc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.up %>
                   <% end %>
                   <%= link_to admins_rooms_path(order_key: :category_id, order_type: :desc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.down %>
                   <% end %>
                 </div>
@@ -71,11 +71,11 @@
                 <%= t "admins.rooms.price" %>
                 <div class="btn-sort">
                   <%= link_to admins_rooms_path(order_key: :price, order_type: :asc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.up %>
                   <% end %>
                   <%= link_to admins_rooms_path(order_key: :price, order_type: :desc),
-                    class: "btn-asc" do %>
+                    class: "btn-asc", remote: true do %>
                     <%= image_tag Settings.image.down %>
                   <% end %>
                 </div>
@@ -85,11 +85,13 @@
             <th scope="col"><%= t "admins.rooms.action" %></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="rooms">
           <%= render @rooms %>
         </tbody>
       </table>
     </div>
   </section>
-  <%= paginate @rooms, theme: "twitter-bootstrap-3" %>
+  <div id="rooms-paginate">
+    <%= paginate @rooms, remote: "true", theme: "twitter-bootstrap-3" %>
+  </div>
 </div>

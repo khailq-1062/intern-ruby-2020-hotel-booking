@@ -1,5 +1,5 @@
 <%= form_tag admins_rooms_path, class: "form-search-admin",
-    id: "form-search-room-admin", method: :get do %>
+    id: "form-search-room-admin", remote: true, method: :get do %>
   <div class="big-box-input">
     <div class="box-input">
       <%= text_field_tag :name, params[:name],
