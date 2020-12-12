@@ -12,6 +12,7 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
+const toastr = require('toastr')
 
 import $ from 'jquery';
 global.$ = jQuery;
@@ -44,3 +45,9 @@ require("packs/custom.js")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+toastr.options = {
+  "positionClass": "toast-bottom-right"
+};
+
+global.toastr = toastr;

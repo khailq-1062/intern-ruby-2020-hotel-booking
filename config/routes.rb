@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admins do
-      root to: "dashboard#index"
+      root to: "orders#index"
       resources :rooms
       resources :orders
     end

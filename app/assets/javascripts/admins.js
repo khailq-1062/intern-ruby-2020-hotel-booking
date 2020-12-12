@@ -6,3 +6,4 @@
 //= require i18n.js
 //= require i18n/translations
 //= require custom2.js
+//= require toastr
