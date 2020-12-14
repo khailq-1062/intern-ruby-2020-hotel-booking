@@ -1,0 +1,10 @@
+<div class="btn-sort">
+  <%= link_to admins_orders_path(order_key: key, order_type: :asc),
+    class: "btn-asc" do %>
+    <%= image_tag Settings.image.up %>
+  <% end %>
+  <%= link_to admins_orders_path(order_key: key, order_type: :desc),
+    class: "btn-asc" do %>
+    <%= image_tag Settings.image.down %>
+  <% end %>
+</div>

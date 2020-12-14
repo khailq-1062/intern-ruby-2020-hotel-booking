@@ -5,8 +5,6 @@
       <div class="row mb-2">
         <div class="col-sm-12 title-head">
           <h1 class="m-0"><%= t "admins.orders.base_title" %></h1>
-          <%= link_to t("admins.orders.add"), new_admins_room_path,
-            class: "btn btn-warning float-right" %>
         </div>
       </div>
     </div>
@@ -19,26 +17,31 @@
             <th scope="col">
               <div class="box-sort">
                 <%= t "admins.orders.id" %>
+                <%= render partial: "shared/button_sort", locals: {key: :id} %>
               </div>
             </th>
             <th scope="col">
               <div class="box-sort">
                 <%= t "admins.orders.user_id" %>
+                <%= render partial: "shared/button_sort", locals: {key: :user_id} %>
               </div>
             </th>
             <th scope="col">
               <div class="box-sort">
                 <%= t "admins.orders.room_id" %>
+                <%= render partial: "shared/button_sort", locals: {key: :room_id} %>
               </div>
             </th>
             <th scope="col">
               <div class="box-sort">
                 <%= t "admins.orders.price" %>
+                <%= render partial: "shared/button_sort", locals: {key: :price} %>
               </div>
             </th>
             <th scope="col">
               <div class="box-sort">
                 <%= t "admins.orders.status" %>
+                <%= render partial: "shared/button_sort", locals: {key: :status} %>
               </div>
             </th>
             <th scope="col"><%= t "admins.orders.action" %></th>

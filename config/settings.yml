@@ -35,3 +35,5 @@ per:
 format_date: "%d-%m-%Y"
 status:
   pendding: "pendding"
+money:
+  dola: "$"

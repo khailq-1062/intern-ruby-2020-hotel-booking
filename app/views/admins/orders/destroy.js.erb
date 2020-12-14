@@ -1,6 +1,5 @@
-<% if @room.destroyed? %>
+<% if @order.destroyed? %>
   $("#btn-del-<%= params[:id] %>").parent().parent().remove();
-  $(".number").text($(".number").text()-1)
   toastr.success("<%= t "admins.delete_success" %>")
 <% else %>
   toastr.warning("<%= t "admins.delete_false" %>")
