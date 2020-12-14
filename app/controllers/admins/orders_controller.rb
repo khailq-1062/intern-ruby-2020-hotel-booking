@@ -1,8 +1,10 @@
 class Admins::OrdersController < Admins::BaseController
-  before_action :find_order, only: %i(edit update)
+  before_action :find_order, only: %i(edit update destroy)
   def index
     @orders = Order.all
                    .includes(:room, :user)
+                   .order_by(params[:order_key] || :status,
+                             params[:order_type] || :asc)
                    .page(params[:page])
                    .per Settings.rooms.num_record
   end
@@ -17,6 +19,11 @@ class Admins::OrdersController < Admins::BaseController
       flash.now[:danger] = t "admins.update_false"
       render :edit
     end
+  end
+
+  def destroy
+    @order.destroy
+    respond_to :js
   end
 
   private

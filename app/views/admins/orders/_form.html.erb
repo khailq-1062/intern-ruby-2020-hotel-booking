@@ -13,7 +13,7 @@
   <%= f.text_field :date_end, class: "form-control", value: @order.date_end, readonly: true %>
   <%= f.label t("admins.orders.status"), class: "input-presence" %>
   <div class="select-option">
-    <%= f.select :status, {collection: Order.statuses.keys.to_a}, selected: "cancel" %>
+    <%= f.select :status, {collection: Order.statuses.keys.to_a}, selected: @order.status %>
   </div>
   <%= f.submit t("admins.rooms.submit"), class: "btn btn-primary" %>
 <% end %>

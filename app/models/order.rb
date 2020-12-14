@@ -32,6 +32,10 @@ class Order < ApplicationRecord
 
   scope :order_id_desc, ->{order id: :desc}
   scope :order_status_asc, ->{order status: :asc}
+  scope :order_by, (lambda do |order_key, order_type|
+    order "#{order_key} #{order_type}" if order_type.present? &&
+                                          order_key.present?
+  end)
 
   enum status: {pendding: 0, approved: 1, disapprove: 2, cancel: 3},
     _suffix: true
