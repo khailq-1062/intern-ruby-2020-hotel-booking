@@ -1,10 +1,18 @@
 <% provide :title, t("admins.orders.base_title")%>
+<div class="text-center">
+  <%= render "admins/orders/form_search" %>
+</div>
 <div class="content-wrapper">
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12 title-head">
           <h1 class="m-0"><%= t "admins.orders.base_title" %></h1>
+          <span class="align-self-center result-admin-order">
+            <%= t ".result" %> : <%= @orders.total_count %>
+          </span>
+          <%= link_to t("admins.orders.add"), new_admins_room_path,
+            class: "btn btn-warning float-right" %>
         </div>
       </div>
     </div>
