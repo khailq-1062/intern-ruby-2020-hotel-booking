@@ -1,12 +1,10 @@
 class Admins::OrdersController < Admins::BaseController
-  before_action :find_order, only: %i(edit update destroy)
+  before_action :find_order, only: %i(edit update)
+  before_action :filter_orders, only: :index
   def index
-    @orders = Order.all
-                   .includes(:room, :user)
-                   .order_by(params[:order_key] || :status,
-                             params[:order_type] || :asc)
-                   .page(params[:page])
-                   .per Settings.rooms.num_record
+    @orders = @orders.includes(:room, :user)
+                     .page(params[:page])
+                     .per Settings.rooms.num_record
   end
 
   def edit; end
@@ -38,5 +36,13 @@ class Admins::OrdersController < Admins::BaseController
 
     flash[:danger] = t "admins.order_not_found"
     redirect_to admins_root_path
+  end
+
+  def filter_orders
+    @orders = Order.by_id(params[:order_id])
+                   .by_room(params[:room_id])
+                   .by_date_start(params[:date_start])
+                   .by_date_end(params[:date_end])
+                   .by_status params[:status]
   end
 end

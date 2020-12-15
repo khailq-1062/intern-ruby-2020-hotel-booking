@@ -36,6 +36,21 @@ class Order < ApplicationRecord
     order "#{order_key} #{order_type}" if order_type.present? &&
                                           order_key.present?
   end)
+  scope :by_id, (lambda do |id|
+    where(id: id) if id.present?
+  end)
+  scope :by_date_start, (lambda do |date_start|
+    where "date_start >= ?", date_start if date_start.present?
+  end)
+  scope :by_date_end, (lambda do |date_end|
+    where "date_end <= ?", date_end if date_end.present?
+  end)
+  scope :by_status, (lambda do |status|
+    where(status: status) if status.present?
+  end)
+  scope :by_room, (lambda do |room_id|
+    where(room_id: room_id) if room_id.present?
+  end)
 
   enum status: {pendding: 0, approved: 1, disapprove: 2, cancel: 3},
     _suffix: true

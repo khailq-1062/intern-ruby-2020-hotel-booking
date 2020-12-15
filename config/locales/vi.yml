@@ -184,6 +184,14 @@ vi:
       date_end: "Ngay ket thuc"
       price: "Gia phong"
       status: "Trang thai"
+      form_search:
+        order_id: "Mã hóa đơn"
+        room_id: "Mã phòng"
+        date_start: "Ngày nhận phòng"
+        date_end: "Ngày trả phòng"
+        search: "Lọc"
+      index:
+        result: "Kết quả"
   shared:
     user_form:
       send: "Gửi"
